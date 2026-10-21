@@ -1,0 +1,1424 @@
+{
+  "users": [
+    {
+      "id": "u-faculty-1",
+      "username": "dr.smith",
+      "password": "faculty123",
+      "fullName": "Dr. Sarah Smith",
+      "email": "sarah.smith@university.edu",
+      "role": "faculty",
+      "department": "Computer Science & AI",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah"
+    },
+    {
+      "id": "u-faculty-2",
+      "username": "prof.johnson",
+      "password": "faculty123",
+      "fullName": "Prof. Michael Johnson",
+      "email": "m.johnson@university.edu",
+      "role": "faculty",
+      "department": "Software Engineering",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Michael"
+    },
+    {
+      "id": "u-student-1",
+      "username": "alice",
+      "password": "student123",
+      "fullName": "Alice Anderson",
+      "email": "alice@student.edu",
+      "role": "student",
+      "department": "Computer Science",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Alice"
+    },
+    {
+      "id": "u-student-2",
+      "username": "bob",
+      "password": "student123",
+      "fullName": "Bob Brown",
+      "email": "bob@student.edu",
+      "role": "student",
+      "department": "Computer Science",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Bob"
+    },
+    {
+      "id": "u-student-3",
+      "username": "charlie",
+      "password": "student123",
+      "fullName": "Charlie Chen",
+      "email": "charlie@student.edu",
+      "role": "student",
+      "department": "Computer Science",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Charlie"
+    },
+    {
+      "id": "u-faculty-1792524710482",
+      "username": "testfaculty",
+      "password": "pass123",
+      "fullName": "Prof. Test Faculty",
+      "email": "test@university.edu",
+      "role": "faculty",
+      "department": "Computer Science",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Prof.%20Test%20Faculty",
+      "createdAt": "2026-10-20T19:31:50.482Z"
+    },
+    {
+      "id": "u-faculty-1792525066455",
+      "username": "prof.alan",
+      "password": "turing2026",
+      "fullName": "Prof. Alan Turing",
+      "email": "alan.turing@university.edu",
+      "role": "faculty",
+      "department": "Computer Science",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Prof.%20Alan%20Turing",
+      "createdAt": "2026-10-20T19:37:46.455Z"
+    },
+    {
+      "id": "u-student-1792525066621",
+      "username": "ada.lovelace",
+      "password": "ada1843",
+      "fullName": "Ada Lovelace",
+      "email": "ada.lovelace@student.edu",
+      "role": "student",
+      "department": "Computer Science",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Ada%20Lovelace",
+      "createdAt": "2026-10-20T19:37:46.621Z"
+    },
+    {
+      "id": "u-student-1792525255753",
+      "username": "iamsupreme",
+      "password": "Abc@123",
+      "fullName": "charan",
+      "email": "charandeepkoushal02@gmail.com",
+      "role": "student",
+      "department": "Artificial Intelligence",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=charan",
+      "createdAt": "2026-10-20T19:40:55.753Z"
+    },
+    {
+      "id": "u-faculty-1792525466457",
+      "username": "prof.rama",
+      "password": "Abc@123",
+      "fullName": "Dr.RAMA",
+      "email": "rama123@gmail.com",
+      "role": "faculty",
+      "department": "Artificial Intelligence",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Dr.RAMA",
+      "createdAt": "2026-10-20T19:44:26.457Z"
+    }
+  ],
+  "classes": [
+    {
+      "id": "c-1792525524659",
+      "code": "MA001",
+      "name": "ENGINEERING MATHEMATICS",
+      "section": "Section A • Fall 2026",
+      "room": "Hall 301",
+      "subject": "MATHEMATICS",
+      "facultyId": "u-faculty-1792525466457",
+      "facultyName": "Dr.RAMA",
+      "facultyEmail": "rama123@gmail.com",
+      "colorTheme": "teal",
+      "classCode": "5f-ucwa",
+      "enrolledStudentIds": [
+        "u-student-1792525255753"
+      ],
+      "createdAt": "2026-10-20T19:45:24.659Z",
+      "gradingWeights": {
+        "endTerm": 40,
+        "midTerm": 30,
+        "quizzes": 15,
+        "labs": 15
+      },
+      "syllabusProgress": {
+        "currentTopic": "Unit 1: Core Mathematical & Computational Principles",
+        "completedModules": [
+          "Unit 1: Core Principles & Definitions"
+        ],
+        "futureModules": [
+          "Unit 2: System Implementations & Advanced Applications"
+        ]
+      }
+    },
+    {
+      "id": "c-1792525137879",
+      "code": "CS330",
+      "name": "Theory of Computation & Automata",
+      "section": "Section A . Fall 2026",
+      "room": "Babbage Hall 101",
+      "subject": "Computer Science",
+      "facultyId": "u-faculty-1792525066455",
+      "facultyName": "Prof. Alan Turing",
+      "facultyEmail": "alan.turing@university.edu",
+      "colorTheme": "teal",
+      "classCode": "q8-wnxr",
+      "enrolledStudentIds": [
+        "u-student-1792525066621"
+      ],
+      "createdAt": "2026-10-20T19:38:57.879Z",
+      "gradingWeights": {
+        "endTerm": 40,
+        "midTerm": 30,
+        "quizzes": 15,
+        "labs": 15
+      },
+      "syllabusProgress": {
+        "currentTopic": "Unit 1: Core Mathematical & Computational Principles",
+        "completedModules": [
+          "Unit 1: Core Principles & Definitions"
+        ],
+        "futureModules": [
+          "Unit 2: System Implementations & Advanced Applications"
+        ]
+      }
+    },
+    {
+      "id": "c-1792524773829",
+      "code": "CS450",
+      "name": "Distributed Cloud Architecture",
+      "section": "Section A",
+      "room": "Room 401",
+      "subject": "Cloud Computing",
+      "facultyId": "u-faculty-1",
+      "facultyName": "Dr. Sarah Smith",
+      "facultyEmail": "sarah.smith@university.edu",
+      "colorTheme": "purple",
+      "classCode": "vt-58yx",
+      "enrolledStudentIds": [
+        "u-student-2"
+      ],
+      "createdAt": "2026-10-20T19:32:53.829Z",
+      "gradingWeights": {
+        "endTerm": 40,
+        "midTerm": 30,
+        "quizzes": 15,
+        "labs": 15
+      },
+      "syllabusProgress": {
+        "currentTopic": "Unit 1: Core Mathematical & Computational Principles",
+        "completedModules": [
+          "Unit 1: Core Principles & Definitions"
+        ],
+        "futureModules": [
+          "Unit 2: System Implementations & Advanced Applications"
+        ]
+      }
+    },
+    {
+      "id": "c-101",
+      "code": "CS101",
+      "name": "Introduction to Python Programming",
+      "section": "Section A • Fall 2026",
+      "room": "Hall 302",
+      "subject": "Computer Science",
+      "facultyId": "u-faculty-1",
+      "facultyName": "Dr. Sarah Smith",
+      "facultyEmail": "sarah.smith@university.edu",
+      "colorTheme": "blue",
+      "classCode": "py-7x9q",
+      "enrolledStudentIds": [
+        "u-student-1",
+        "u-student-2",
+        "u-student-3"
+      ],
+      "gradingWeights": {
+        "endTerm": 40,
+        "midTerm": 30,
+        "quizzes": 15,
+        "labs": 15
+      },
+      "syllabusProgress": {
+        "currentTopic": "Python Data Model, Mutability & Functions",
+        "completedModules": [
+          "Unit 1: Python Data Model, Memory Layout & Mutability",
+          "Unit 2: Functions, Recursion & Memoization"
+        ],
+        "futureModules": [
+          "Unit 3: Concurrency, GIL & Mutex Synchronization",
+          "Unit 4: Asynchronous Architectures"
+        ]
+      }
+    },
+    {
+      "id": "c-201",
+      "code": "CS201",
+      "name": "Data Structures & Algorithms",
+      "section": "Section B • Fall 2026",
+      "room": "Lab 105",
+      "subject": "Computer Science",
+      "facultyId": "u-faculty-1",
+      "facultyName": "Dr. Sarah Smith",
+      "facultyEmail": "sarah.smith@university.edu",
+      "colorTheme": "teal",
+      "classCode": "dsa-4k2w",
+      "enrolledStudentIds": [
+        "u-student-1",
+        "u-student-2"
+      ],
+      "gradingWeights": {
+        "end_term": 30,
+        "mid_term": 20,
+        "capstone_project": 20,
+        "quizzes": 15,
+        "viva_labs": 15
+      },
+      "syllabusProgress": {
+        "currentTopic": "Linked Lists & Linear Data Structures",
+        "completedModules": [
+          "Module 1: Linear Structures (Dynamic Arrays, Doubly Linked Lists, Stacks, Queues)"
+        ],
+        "futureModules": [
+          "Module 2: Trees & Hierarchies (BST, AVL Trees, Red-Black Trees, Heaps)",
+          "Module 3: Graph Algorithms (BFS, DFS, Dijkstra, Prim, Kruskal)",
+          "Module 4: Dynamic Programming & Greedy Approximations"
+        ]
+      },
+      "evaluationScheme": [
+        {
+          "id": "end_term",
+          "name": "End-Term Comprehensive Exam",
+          "weight": 30
+        },
+        {
+          "id": "mid_term",
+          "name": "Mid-Term Exam",
+          "weight": 20
+        },
+        {
+          "id": "capstone_project",
+          "name": "Final Capstone Project",
+          "weight": 20
+        },
+        {
+          "id": "quizzes",
+          "name": "Quizzes & Tests",
+          "weight": 15
+        },
+        {
+          "id": "viva_labs",
+          "name": "Lab Practicals & Oral Viva",
+          "weight": 15
+        }
+      ]
+    },
+    {
+      "id": "c-301",
+      "code": "CS301",
+      "name": "Machine Learning & Neural Representations",
+      "section": "Advanced Track",
+      "room": "Turing Lab",
+      "subject": "Artificial Intelligence",
+      "facultyId": "u-faculty-2",
+      "facultyName": "Prof. Michael Johnson",
+      "facultyEmail": "m.johnson@university.edu",
+      "colorTheme": "purple",
+      "classCode": "ai-8m3z",
+      "enrolledStudentIds": [
+        "u-student-1",
+        "u-student-3"
+      ],
+      "gradingWeights": {
+        "endTerm": 40,
+        "midTerm": 30,
+        "quizzes": 15,
+        "labs": 15
+      },
+      "syllabusProgress": {
+        "currentTopic": "Supervised Linear Regression & Gradient Descent",
+        "completedModules": [
+          "Unit 1: Multivariate Linear Regression & Matrix Broadcasting"
+        ],
+        "futureModules": [
+          "Unit 2: Logistic Regression & Classification Bounds",
+          "Unit 3: Deep Neural Networks & Backpropagation"
+        ]
+      }
+    }
+  ],
+  "announcements": [
+    {
+      "id": "ann-1792530340507",
+      "classId": "c-101",
+      "authorId": "u-faculty",
+      "authorName": "Instructor",
+      "authorAvatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Teacher",
+      "content": "📢 New Theoretical Task Posted: \"Concurrency & Race Condition Analysis\" (100 pts). Due on 2026-11-28.\n📖 Attached Reference: \"Official CPython Threading & GIL Whitepaper\"",
+      "type": "assignment",
+      "assignmentId": "a-1792530340507",
+      "createdAt": "2026-10-20 21:05",
+      "comments": []
+    },
+    {
+      "id": "ann-1792530305681",
+      "classId": "c-101",
+      "authorId": "u-faculty-1",
+      "authorName": "Dr. Sarah Smith",
+      "authorAvatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Teacher",
+      "content": "💡 New Quiz Posted: \"Test Quiz: Python Data Model\" (2 questions • 100 pts). Available for all enrolled students.",
+      "type": "quiz",
+      "quizId": "q-1792530305681",
+      "createdAt": "2026-10-20 21:05",
+      "comments": []
+    },
+    {
+      "id": "ann-1792528975704",
+      "classId": "c-101",
+      "authorId": "u-faculty-1",
+      "authorName": "Dr. Sarah Smith",
+      "authorAvatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Teacher",
+      "content": "📚 Posted new NOTES: \"Concurrency & Mutex Locks in Python\". Review the concepts and lecture notes in the Classwork tab.",
+      "createdAt": "2026-10-20 20:42",
+      "comments": []
+    },
+    {
+      "id": "ann-1",
+      "classId": "c-101",
+      "authorId": "u-faculty-1",
+      "authorName": "Dr. Sarah Smith",
+      "authorAvatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+      "content": "Welcome to CS101! Please review the syllabus in the Classwork tab. Our first lab assessment on Python Basics & Type Casts is now posted.",
+      "createdAt": "2026-10-12 09:30",
+      "comments": [
+        {
+          "id": "comm-1",
+          "authorName": "Alice Anderson",
+          "content": "Looking forward to this course! Are we using Python 3.12?",
+          "createdAt": "2026-10-12 10:15"
+        },
+        {
+          "id": "comm-2",
+          "authorName": "Dr. Sarah Smith",
+          "content": "Yes Alice, Python 3.12 with modern type annotations.",
+          "createdAt": "2026-10-12 10:30"
+        }
+      ]
+    },
+    {
+      "id": "ann-2",
+      "classId": "c-201",
+      "authorId": "u-faculty-1",
+      "authorName": "Dr. Sarah Smith",
+      "authorAvatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+      "content": "Reminder: All dynamic array implementations must demonstrate amortized O(1) resizing logic with boundary checks.",
+      "createdAt": "2026-10-14 14:00",
+      "comments": []
+    }
+  ],
+  "assignments": [
+    {
+      "id": "a-101",
+      "classId": "c-101",
+      "topic": "Unit 1: Python Fundamentals",
+      "title": "Python Basics, Type Conversions & Formatted Strings",
+      "instructions": "Write a Python script demonstrating int, float, complex types, type conversion with edge-case handling, and modern f-string float specifiers.",
+      "points": 100,
+      "dueDate": "2026-10-25",
+      "topics": [
+        "Variables",
+        "Data Types",
+        "Type Conversion",
+        "String Formatting"
+      ],
+      "referenceDoc": {
+        "title": "Reference Guide: CPython Memory Specification & Formatting Standards",
+        "fileName": "cpython_memory_reference.md",
+        "content": "# CPython Memory Reference & Type System Guide\n\n## 1. Type Promotion Invariants\n- When performing arithmetic operations between heterogeneous numerical types (e.g. `int` + `float`), Python automatically coerces the integer to IEEE 754 double precision float.\n\n## 2. String Interpolation Standards (PEP 498)\n- Use f-strings with explicit precision formatters: `f'{value:.2f}'`\n- Handle null or empty string boundaries gracefully using ternary defaults."
+      },
+      "createdAt": "2026-10-13 11:00"
+    },
+    {
+      "id": "q-101-1",
+      "classId": "c-101",
+      "topic": "Unit 1: Fundamentals",
+      "title": "Pop Quiz: Python Memory Model & Mutability",
+      "assignmentType": "quiz",
+      "submissionFormat": "quiz",
+      "instructions": "Complete the 4-question conceptual quiz on Python memory, reference counting, and mutability.",
+      "points": 100,
+      "dueDate": "2026-11-15",
+      "topics": [
+        "Memory Model",
+        "Mutability",
+        "Reference Counting"
+      ],
+      "createdAt": "2026-10-18 14:00"
+    },
+    {
+      "id": "a-102",
+      "classId": "c-101",
+      "topic": "Unit 2: Functions & Recursion",
+      "title": "Recursive Fibonacci with Memoization & Decorators",
+      "instructions": "Implement Fibonacci sequence generation with memoized dictionary cache and timing decorator.",
+      "points": 100,
+      "dueDate": "2026-11-02",
+      "topics": [
+        "Functions",
+        "Recursion",
+        "Memoization",
+        "Decorators"
+      ],
+      "createdAt": "2026-10-16 10:00"
+    },
+    {
+      "id": "a-201",
+      "classId": "c-201",
+      "topic": "Unit 1: Linear Data Structures",
+      "title": "Memory-Safe Doubly Linked List Implementation",
+      "instructions": "Implement a Doubly Linked List with O(1) head/tail insertion, deletion, forward/backward traversal, and boundary edge assertions.",
+      "points": 100,
+      "dueDate": "2026-10-28",
+      "topics": [
+        "Pointers",
+        "Linked Lists",
+        "Memory Management",
+        "Edge Cases"
+      ],
+      "createdAt": "2026-10-15 08:30"
+    },
+    {
+      "id": "a-301",
+      "classId": "c-301",
+      "topic": "Unit 1: Supervised Regression",
+      "title": "Vectorized Linear Regression with Gradient Descent",
+      "instructions": "Implement batch gradient descent from scratch using NumPy matrix broadcasting without scikit-learn.",
+      "points": 100,
+      "dueDate": "2026-10-30",
+      "topics": [
+        "Linear Regression",
+        "Gradient Descent",
+        "Cost Function",
+        "NumPy Vectorization"
+      ],
+      "createdAt": "2026-10-17 12:00"
+    },
+    {
+      "id": "a-1792525160673",
+      "classId": "c-1792525134760",
+      "topic": "Unit 1: Automata Theory",
+      "title": "Implement a Deterministic Finite Automaton (DFA)",
+      "instructions": "Write a Python class DFA that accepts a transitions dict, start state, and accept states, and validates input strings.",
+      "points": 100,
+      "dueDate": "2026-11-20",
+      "topics": [
+        "Automata Theory",
+        "Python Classes",
+        "String Parsing"
+      ],
+      "createdAt": "2026-10-20 19:39"
+    },
+    {
+      "id": "a-1792526256910",
+      "classId": "c-101",
+      "topic": "Unit 3: Trees & Graphs",
+      "title": "Binary Search Trees & AVL Balancing",
+      "instructions": "Implement a Node class and BST with insert, search, and in-order traversal methods. Ensure time complexity of search is O(h).",
+      "points": 100,
+      "dueDate": "2026-11-25",
+      "topics": [
+        "Binary Search Trees",
+        "Tree Traversals",
+        "Time Complexity Analysis"
+      ],
+      "createdAt": "2026-10-20 19:57"
+    },
+    {
+      "id": "a-1792526560611",
+      "classId": "c-1792525524659",
+      "topic": "Unit 1: Fundamentals",
+      "title": "paper upgradation on 5G networks",
+      "instructions": "send the upgradation  in pdf format",
+      "points": 10,
+      "dueDate": "2026-10-22",
+      "topics": [
+        "mathematical expressions",
+        "solution to the problem"
+      ],
+      "createdAt": "2026-10-20 20:02"
+    },
+    {
+      "id": "a-1792526793523",
+      "classId": "c-1792525524659",
+      "topic": "Unit 1: Fundamentals",
+      "title": "code on adding 2 variables",
+      "instructions": "",
+      "points": 100,
+      "dueDate": "2026-11-20",
+      "topics": [
+        "the final result",
+        "code logic"
+      ],
+      "createdAt": "2026-10-20 20:06"
+    },
+    {
+      "id": "a-1792527033475",
+      "classId": "c-101",
+      "topic": "Unit 4: Distributed Computing",
+      "title": "Theoretical Analysis: CAP Theorem and Distributed Consensus Protocols",
+      "assignmentType": "theory",
+      "submissionFormat": "theory",
+      "instructions": "Write a comprehensive theoretical analysis comparing Consistency vs Availability under network partitions. Discuss how Paxos and Raft achieve consensus, and analyze trade-offs between Cassandra (AP) and Google Spanner (CP).",
+      "starterCode": "",
+      "points": 100,
+      "dueDate": "2026-11-28",
+      "topics": [
+        "CAP Theorem",
+        "Consensus Protocols",
+        "Distributed Trade-offs",
+        "System Architecture"
+      ],
+      "createdAt": "2026-10-20 20:10"
+    },
+    {
+      "id": "q-1792530305681",
+      "classId": "c-101",
+      "topic": "Unit 1: Fundamentals",
+      "title": "Quiz: Test Quiz: Python Data Model",
+      "assignmentType": "quiz",
+      "submissionFormat": "quiz",
+      "instructions": "Answer the 2 questions to check your knowledge.",
+      "points": 100,
+      "dueDate": "2026-10-27",
+      "topics": [
+        "Unit 1: Fundamentals",
+        "Quiz Assessment"
+      ],
+      "quizId": "q-1792530305681",
+      "createdAt": "2026-10-20 21:05"
+    },
+    {
+      "id": "a-1792530340507",
+      "classId": "c-101",
+      "topic": "Unit 3: Concurrency",
+      "title": "Concurrency & Race Condition Analysis",
+      "assignmentType": "theory",
+      "submissionFormat": "theory",
+      "instructions": "Explain how the GIL impacts CPU-bound vs IO-bound threading in CPython. Refer to the attached study guide.",
+      "starterCode": "",
+      "points": 100,
+      "dueDate": "2026-11-28",
+      "topics": [
+        "Concurrency",
+        "GIL",
+        "Threading",
+        "Race Conditions"
+      ],
+      "rubricCriteria": null,
+      "referenceDoc": {
+        "title": "Official CPython Threading & GIL Whitepaper",
+        "fileName": "gil_whitepaper.md",
+        "content": "# CPython GIL Whitepaper\n\nThe Global Interpreter Lock prevents multiple native threads from executing Python bytecodes in parallel..."
+      },
+      "createdAt": "2026-10-20 21:05"
+    }
+  ],
+  "submissions": [
+    {
+      "id": "sub-1792607056931",
+      "assignmentId": "assign-1",
+      "classId": "class-1",
+      "studentId": "student-1",
+      "studentName": "Charan",
+      "studentEmail": "charan@university.edu",
+      "content": "def solve(nums):\n    # Python optimal solution using dynamic array\n    res = []\n    for x in nums:\n        if x > 0:\n            res.append(x * 2)\n    return res\n",
+      "fileName": "solution.py",
+      "filePath": "uploads/1792607052504_solution.py",
+      "submittedAt": "2026-10-21 18:24",
+      "status": "graded",
+      "submissionCategory": "code",
+      "evaluationComponentId": "end_term",
+      "evaluationComponentName": "End-Term Examination",
+      "evaluation": {
+        "overallScore": 2,
+        "maxScore": 100,
+        "percentage": 2,
+        "masteryLevel": "beginner",
+        "graceMarksAwarded": 2,
+        "graceMarksReason": "Awarding minimal grace marks for the submission of a syntactically correct Python file, acknowledging the effort to provide a structured code block even though the content is insufficient.",
+        "topicScores": {
+          "Core Concepts": 0,
+          "Implementation Quality": 0
+        },
+        "strengths": [
+          "The code is syntactically valid Python.",
+          "The function structure is clear and readable."
+        ],
+        "weaknesses": [
+          "The solution does not address any specific problem or core concept.",
+          "Lacks any algorithmic complexity or problem-solving logic.",
+          "No handling of edge cases or input validation."
+        ],
+        "feedback": "The submitted solution is insufficient for a coursework assignment as it does not demonstrate any meaningful problem-solving or conceptual understanding. The code provided is a basic loop that doubles positive numbers, which does not align with the expected depth of a 100-point assignment. To improve, you must identify the specific problem statement and implement a solution that addresses the core concepts and implementation quality criteria outlined in the rubric.",
+        "suggestions": [
+          "Review the assignment prompt to identify the specific problem to be solved.",
+          "Implement a solution that demonstrates algorithmic thinking and core concepts.",
+          "Add comments and documentation to explain your approach and logic."
+        ],
+        "evaluatedBy": "Agentic AI Pipeline [Agent 2: Evaluator -> Agent 3: Auditor (APPROVED)]",
+        "auditorBadge": "Audited & Verified by Senior Academic AI Auditor: APPROVED ✓",
+        "auditStatus": "APPROVED",
+        "multiAgentWorkflow": {
+          "agent1_rubric": {
+            "assignmentTitle": "Coursework Assignment",
+            "totalPoints": 100,
+            "criteria": [
+              {
+                "id": "crit_1",
+                "name": "Core Concepts",
+                "maxPoints": 50,
+                "rules": "Demonstrates thorough conceptual clarity, problem solving, and correctness in Core Concepts."
+              },
+              {
+                "id": "crit_2",
+                "name": "Implementation Quality",
+                "maxPoints": 50,
+                "rules": "Demonstrates thorough conceptual clarity, problem solving, and correctness in Implementation Quality."
+              }
+            ],
+            "graceMarksPolicy": {
+              "maxGrace": 5,
+              "guideline": "Award +2 to +5 grace marks for sincere good-faith effort and clear structural presentation."
+            }
+          },
+          "agent2_evaluation": {
+            "criteriaEvaluations": [
+              {
+                "criterionId": "crit_1",
+                "name": "Core Concepts",
+                "maxPoints": 50,
+                "scoreAwarded": 0,
+                "justification": "The submission fails to demonstrate any conceptual clarity or problem-solving skills as it provides a trivial, generic function that does not address any specific algorithmic challenge or core concept. There is no evidence of understanding the underlying logic required for a meaningful coursework assignment."
+              },
+              {
+                "criterionId": "crit_2",
+                "name": "Implementation Quality",
+                "maxPoints": 50,
+                "scoreAwarded": 0,
+                "justification": "The code is syntactically valid Python but lacks any implementation quality relevant to a complex assignment, consisting only of a simple loop and conditional statement. It does not exhibit the thoroughness, correctness, or robustness expected in a high-quality implementation."
+              }
+            ],
+            "proposedCriteriaSum": 0,
+            "proposedGraceMarks": 2,
+            "graceMarksReason": "Awarding minimal grace marks for the submission of a syntactically correct Python file, acknowledging the effort to provide a structured code block even though the content is insufficient.",
+            "proposedTotalScore": 2,
+            "masteryLevel": "beginner",
+            "strengths": [
+              "The code is syntactically valid Python.",
+              "The function structure is clear and readable."
+            ],
+            "weaknesses": [
+              "The solution does not address any specific problem or core concept.",
+              "Lacks any algorithmic complexity or problem-solving logic.",
+              "No handling of edge cases or input validation."
+            ],
+            "feedback": "The submitted solution is insufficient for a coursework assignment as it does not demonstrate any meaningful problem-solving or conceptual understanding. The code provided is a basic loop that doubles positive numbers, which does not align with the expected depth of a 100-point assignment. To improve, you must identify the specific problem statement and implement a solution that addresses the core concepts and implementation quality criteria outlined in the rubric.",
+            "suggestions": [
+              "Review the assignment prompt to identify the specific problem to be solved.",
+              "Implement a solution that demonstrates algorithmic thinking and core concepts.",
+              "Add comments and documentation to explain your approach and logic."
+            ],
+            "agent": "Evaluator Agent (Impartial Academic Grader)",
+            "model": "Groq (qwen/qwen3.8-27b)"
+          },
+          "agent3_audit": {
+            "auditStatus": "APPROVED",
+            "reflectionVerdict": "APPROVED",
+            "mathCheck": {
+              "calculatedCriteriaSum": 0,
+              "proposedTotal": 0,
+              "isValid": true,
+              "notes": "The sum of the criteria scores (0 + 0) equals the proposed criteria sum (0). The final score calculation (0 + 2 grace marks) is mathematically correct."
+            },
+            "rubricCompliance": {
+              "isStrictlyCompliant": true,
+              "unauthorizedDeductionsFound": false,
+              "notes": "The rubric requires 'thorough conceptual clarity, problem solving, and correctness'. The submission is a trivial function that does not demonstrate these qualities. The deduction to 0 is justified by the lack of required depth and complexity, not by unstated rules."
+            },
+            "auditExplanation": "The evaluator correctly identified that the submission lacks the required conceptual depth and implementation quality, justifying the zero scores for both criteria. The arithmetic is accurate, and the grace marks are appropriately applied for syntactic validity.",
+            "finalOverallScore": 2,
+            "finalPercentage": 2,
+            "finalGraceMarks": 2,
+            "graceMarksReason": "Awarding minimal grace marks for the submission of a syntactically correct Python file, acknowledging the effort to provide a structured code block even though the content is insufficient.",
+            "auditedCriteria": [
+              {
+                "criterionId": "crit_1",
+                "name": "Core Concepts",
+                "maxPoints": 50,
+                "scoreAwarded": 0,
+                "auditStatus": "VALIDATED",
+                "notes": "The submission does not demonstrate thorough conceptual clarity or problem-solving skills as required by the rubric."
+              },
+              {
+                "criterionId": "crit_2",
+                "name": "Implementation Quality",
+                "maxPoints": 50,
+                "scoreAwarded": 0,
+                "auditStatus": "VALIDATED",
+                "notes": "The code lacks the thoroughness, correctness, and robustness expected for a high-quality implementation according to the rubric."
+              }
+            ],
+            "masteryLevel": "beginner",
+            "finalFeedback": "The submitted solution is insufficient for a coursework assignment as it does not demonstrate any meaningful problem-solving or conceptual understanding. The code provided is a basic loop that doubles positive numbers, which does not align with the expected depth of a 100-point assignment. To improve, you must identify the specific problem statement and implement a solution that addresses the core concepts and implementation quality criteria outlined in the rubric.",
+            "verificationBadge": "Audited & Verified by Senior Academic AI Auditor: APPROVED ✓",
+            "agent": "Auditor Agent (Senior Academic Auditor)",
+            "model": "Groq (qwen/qwen3.8-27b)"
+          }
+        },
+        "ragContextUsed": [
+          "[CHROMADB KNOWLEDGE]: Core syllabus grounding guidelines"
+        ],
+        "evaluatedAt": "2026-10-21 18:24",
+        "submissionCategory": "code"
+      }
+    },
+    {
+      "id": "sub-1792530411688",
+      "assignmentId": "a-1792530340507",
+      "studentId": "u-student-2",
+      "studentName": "Bob Brown",
+      "studentEmail": "bob@student.edu",
+      "content": "# Concurrency & GIL Analysis - Bob Brown\n\n## 1. The Role of the Global Interpreter Lock (GIL)\nAs highlighted in the attached CPython GIL Whitepaper, CPython uses reference counting for its memory management. Because the reference counters are not atomic, concurrent threads modifying PyObject references could lead to race conditions and memory leaks. The GIL solves this by guaranteeing that only one native OS thread executes Python bytecode at any given moment.\n\n## 2. CPU-Bound vs I/O-Bound Workloads\n- CPU-Bound Tasks: For tasks like numerical matrix multiplications or cryptographic hashing, threading in Python provides no speedup and actually suffers from lock-contention overhead. Multiprocessing with independent heaps is required.\n- I/O-Bound Tasks: For network sockets, file reads, or API requests, the GIL is released during system calls, allowing cooperative concurrency.\n\n## 3. Conclusion\nThe whitepaper correctly notes that while the GIL limits multi-core CPU scaling, asynchronous event loops (asyncio) and multiprocessing bypass these constraints cleanly.",
+      "fileName": "concurrency_analysis.md",
+      "filePath": "uploads/1792530410009_concurrency_analysis.md",
+      "submittedAt": "2026-10-20 21:06",
+      "status": "graded",
+      "submissionCategory": "theory",
+      "evaluation": {
+        "overallScore": 68,
+        "percentage": 68,
+        "masteryLevel": "intermediate",
+        "graceMarksAwarded": 4,
+        "graceMarksReason": "Bob, you have a solid grasp of the core concepts and your writing is clear and concise. I am awarding grace marks for your accurate identification of the reference counting issue and the correct distinction between CPU and I/O bound scenarios. Keep pushing for more depth in your next submissions!",
+        "topicScores": {
+          "Concurrency": 70,
+          "GIL": 85,
+          "Threading": 75,
+          "Race Conditions": 60
+        },
+        "strengths": [
+          "Correctly identifies that the GIL exists primarily to protect reference counting mechanisms from race conditions.",
+          "Accurately distinguishes between CPU-bound tasks (where threading is ineffective) and I/O-bound tasks (where threading is beneficial due to GIL release).",
+          "Mentions alternative solutions like multiprocessing and asyncio, showing awareness of broader concurrency patterns."
+        ],
+        "weaknesses": [
+          "Lacks a specific, illustrative example of a race condition in Python (e.g., a shared counter without a lock) to concretize the theoretical point.",
+          "Does not explain the mechanism of how the GIL is released during I/O operations (e.g., blocking system calls) in sufficient detail.",
+          "The analysis of 'lock-contention overhead' for CPU-bound tasks is stated but not elaborated upon with technical nuance regarding context switching costs."
+        ],
+        "feedback": "Bob, this is a competent and well-structured submission. You have correctly identified the fundamental reason for the GIL's existence (reference counting safety) and provided a clear, accurate distinction between CPU-bound and I/O-bound workloads. Your conclusion effectively summarizes the trade-offs and mentions relevant alternatives like asyncio and multiprocessing, which shows good contextual awareness.\n\nHowever, to reach a higher level of mastery, the essay needs more depth and concrete examples. For instance, when discussing race conditions, it would be beneficial to briefly describe a scenario where two threads increment a shared variable without synchronization, illustrating the 'lost update' problem. Additionally, explaining *how* the GIL is released during I/O operations (i.e., the thread blocks on a system call, releasing the GIL to allow other threads to run) would strengthen your argument about I/O-bound concurrency. The current explanation is correct but somewhat high-level.",
+        "suggestions": [
+          "Include a short code snippet or pseudo-code example demonstrating a race condition in Python (e.g., a shared counter) to illustrate the need for the GIL or locks.",
+          "Elaborate on the mechanism of GIL release during I/O operations, explaining the role of blocking system calls and the thread scheduler.",
+          "Discuss the specific overheads of threading in CPU-bound tasks, such as context switching and lock acquisition/release, to provide a more nuanced analysis."
+        ],
+        "maxScore": 100,
+        "evaluatedBy": "Groq LLM (qwen/qwen3.8-27b)",
+        "evaluatedAt": "2026-10-20 21:06",
+        "ragContextUsed": [],
+        "submissionCategory": "theory"
+      }
+    },
+    {
+      "id": "sub-quiz-1792530305694",
+      "assignmentId": "q-1792530305681",
+      "classId": "c-101",
+      "studentId": "u-student-1",
+      "studentName": "Alice Anderson",
+      "studentEmail": "alice@student.edu",
+      "content": "Completed Quiz: Test Quiz: Python Data Model\nScore: 100/100 (100%)\nCorrect: 2/2",
+      "fileName": "quiz_results.json",
+      "submittedAt": "2026-10-20 21:05",
+      "evaluation": {
+        "overallScore": 100,
+        "maxScore": 100,
+        "percentage": 100,
+        "correctCount": 2,
+        "totalQuestions": 2,
+        "masteryLevel": "expert",
+        "strengths": [
+          "Strong mastery of core concepts tested in this quiz.",
+          "Accurate analytical judgment under quiz constraints."
+        ],
+        "weaknesses": [
+          "No weaknesses identified. Perfect score!"
+        ],
+        "feedback": "Outstanding performance! You scored a perfect 100% on \"Test Quiz: Python Data Model\". Your conceptual mastery is exceptional.",
+        "breakdown": [
+          {
+            "questionId": "q1",
+            "question": "Is a tuple mutable or immutable?",
+            "options": [
+              "Mutable",
+              "Immutable",
+              "Semi-mutable",
+              "Depends on Python version"
+            ],
+            "studentChoice": 1,
+            "correctOption": 1,
+            "isCorrect": true,
+            "explanation": "Tuples cannot be modified after instantiation."
+          },
+          {
+            "questionId": "q2",
+            "question": "What does id(x) return in CPython?",
+            "options": [
+              "The object type code",
+              "The memory address of the object",
+              "The reference count",
+              "The hash code"
+            ],
+            "studentChoice": 1,
+            "correctOption": 1,
+            "isCorrect": true,
+            "explanation": "In CPython, id() returns the memory address of the object on the heap."
+          }
+        ],
+        "evaluatedAt": "2026-10-20 21:05"
+      }
+    },
+    {
+      "id": "sub-1792528996805",
+      "assignmentId": "a-101-theory-1",
+      "studentId": "u-student-1",
+      "studentName": "Alex Morgan",
+      "studentEmail": "alex.morgan@university.edu",
+      "content": "# Theoretical Analysis of Python Mutability and Memory Architecture\n\n## 1. Introduction and Memory Invariants\nIn the standard CPython runtime, every variable is a pointer pointing to an underlying PyObject on the heap. A PyObject contains two mandatory fields: ob_refcnt (reference count for automatic garbage collection) and ob_type (type descriptor).\n\n## 2. Mutability vs Immutability\n- Immutable types (integers, strings, tuples, frozensets) guarantee that the object value cannot change after instantiation. Any operation that appears to mutate an immutable object actually allocates a new object in memory.\n- Mutable types (lists, dictionaries, sets) allow in-place modification of their internal pointers without altering the identity (id) of the container object.\n\n## 3. Practical Implications and Trade-offs\nWhen passing arguments to functions in Python, parameters are passed by object reference (call-by-sharing). If a function modifies a mutable argument (e.g. appending to a list), the change reflects globally in the caller's scope. Conversely, assigning to an immutable parameter creates a local binding, isolating caller state.\n\n## 4. Conclusion\nUnderstanding these memory invariants is essential to prevent subtle bugs like mutable default arguments and unintended side effects across concurrent coroutines.",
+      "fileName": "mutability_theory_essay.md",
+      "filePath": "uploads/1792528995023_mutability_theory_essay.md",
+      "submittedAt": "2026-10-20 20:43",
+      "status": "graded",
+      "submissionCategory": "code",
+      "evaluation": {
+        "overallScore": 82,
+        "percentage": 82,
+        "masteryLevel": "intermediate",
+        "graceMarksAwarded": 4,
+        "graceMarksReason": "I really appreciate the clarity and precision of your writing. You demonstrated a strong conceptual grasp of CPython's memory model, which is often a stumbling block for students. The grace marks are for your excellent structure and the insightful mention of concurrent coroutines in the conclusion, which shows you are thinking beyond the basics.",
+        "topicScores": {
+          "General Understanding": 85,
+          "Quality of Work": 79
+        },
+        "strengths": [
+          "Accurate description of the PyObject structure, specifically identifying ob_refcnt and ob_type as the core components of the memory model.",
+          "Clear distinction between immutable and mutable types, correctly noting that 'mutation' of immutable types actually results in new object allocation.",
+          "Correct identification of Python's 'call-by-sharing' semantics, explaining how this leads to side effects with mutable arguments.",
+          "Strong conclusion that connects theoretical memory invariants to practical bugs like mutable default arguments."
+        ],
+        "weaknesses": [
+          "The assignment category is 'Programming / Practical Implementation,' but the submission is purely theoretical. While the theory is sound, the lack of code examples (e.g., demonstrating the id() change for immutable vs. mutable types) limits the demonstration of practical mastery.",
+          "The explanation of garbage collection could be slightly deeper; mentioning that reference counting is the primary mechanism but not the only one (cyclic garbage collector) would add nuance.",
+          "The section on trade-offs could benefit from a specific example of a bug caused by mutable default arguments to illustrate the 'subtle bugs' mentioned in the conclusion."
+        ],
+        "feedback": "This is a well-written and conceptually sound essay. You have clearly grasped the fundamental differences between mutable and immutable objects in Python and how the CPython memory model supports these behaviors. Your explanation of 'call-by-sharing' is particularly good, as it avoids the common misconception of 'pass-by-reference' or 'pass-by-value' and accurately describes the binding of names to objects.\n\nHowever, given that the assignment is categorized under 'Programming / Practical Implementation,' I expected to see some code snippets or practical demonstrations to back up your theoretical claims. For instance, showing a small code block where you print the id() of a list before and after appending, versus a string before and after concatenation, would have strengthened the 'Quality of Work' aspect significantly. The current submission is a strong theoretical overview but lacks the practical evidence that the rubric implies.\n\nOverall, your understanding is solid, and your writing is clear and professional. To improve, try to bridge the gap between theory and practice by including minimal, illustrative code examples that prove the memory behaviors you describe. This will make your argument more robust and align better with the practical nature of the course.",
+        "suggestions": [
+          "Include a short code example demonstrating the difference in id() behavior between mutable and immutable objects to visually prove your points.",
+          "Expand on the 'mutable default arguments' bug by providing a concrete code snippet showing the bug and its fix (using None as a default).",
+          "Briefly mention the cyclic garbage collector to provide a more complete picture of how CPython manages memory beyond just reference counting."
+        ],
+        "maxScore": 100,
+        "evaluatedBy": "Groq LLM (qwen/qwen3.8-27b)",
+        "evaluatedAt": "2026-10-20 20:43",
+        "ragContextUsed": [],
+        "submissionCategory": "code"
+      }
+    },
+    {
+      "id": "sub-1792527035839",
+      "assignmentId": "a-1792527033475",
+      "classId": "c-101",
+      "studentId": "u-student-1",
+      "studentName": "Alice Anderson",
+      "studentEmail": "alice@student.edu",
+      "content": "# Theoretical Analysis: CAP Theorem and Distributed Consensus Protocols\n\n## 1. Introduction and The CAP Theorem Principle\nFormulated by Eric Brewer and formally proven by Seth Gilbert and Nancy Lynch, the CAP theorem asserts that a distributed data store can simultaneously guarantee at most two of three properties:\n1. Consistency (Linearizability): Every read operation receives the most recent write or an error.\n2. Availability: Every non-failing node returns a non-error response for every request without guarantee of being the most up-to-date.\n3. Partition Tolerance: The system continues to operate despite an arbitrary number of messages dropped or delayed by the network between nodes.\n\nBecause asynchronous physical networks are inherently susceptible to network partitions (due to fiber cuts, switch failures, or high packet drop rates), Partition Tolerance (P) is non-negotiable. Consequently, modern distributed systems must strategically choose between Consistency (CP) and Availability (AP) during partitions.\n\n## 2. Distributed Consensus: Paxos and Raft\nTo maintain safety and fault tolerance in CP systems, consensus algorithms such as Paxos and Raft guarantee that a cluster of replicated state machines agrees on an identical sequence of state transitions:\n- Raft decomposes consensus into three independent sub-problems: Leader Election, Log Replication, and Safety. Raft relies on a strict majority quorum (Q = floor(N/2) + 1). If a partition isolates the leader with a minority of nodes, the minority refuses write commitments, preventing split-brain anomalies.\n- Paxos utilizes two-phase rounds (Prepare/Promise and Propose/Accept) to establish consensus across asynchronous agents without requiring a single persistent leader, though Multi-Paxos is typically adopted in production for latency amortization.\n\n## 3. Real-World Architectural Case Studies\n- Apache Cassandra (AP Model): Cassandra utilizes decentralized masterless peer-to-peer ring topology inspired by Amazon Dynamo. It sacrifices strict linearizability in favor of high availability and sub-millisecond write latencies through tunable consistency levels (ONE, QUORUM, ALL) and background hinted handoffs / read repair.\n- Google Spanner (CP Model): Spanner achieves externally consistent global transactions (strict serializability) using TrueTime API, which leverages GPS receivers and atomic clocks with bounded time uncertainty epsilon. By synchronizing commit timestamps within bounded drift, Spanner achieves ACID linearizability globally across WAN partitions.\n\n## 4. Conclusion\nThe trade-off between consistency and availability is not purely binary; modern systems navigate this continuum via bounded staleness, CRDTs (Conflict-free Replicated Data Types), and tunable quorums based on workload access patterns.",
+      "fileName": "cap_theorem_analysis.txt",
+      "filePath": "uploads/1792527033648_cap_theorem_analysis.txt",
+      "submittedAt": "2026-10-20 20:10",
+      "status": "graded",
+      "submissionCategory": "theory",
+      "evaluation": {
+        "overallScore": 92,
+        "percentage": 92,
+        "masteryLevel": "advanced",
+        "graceMarksAwarded": 4,
+        "graceMarksReason": "Awarded +4 grace marks for the exceptional clarity of the Paxos vs. Raft comparison and the precise inclusion of the TrueTime epsilon mechanism in the Spanner analysis. The structure is exemplary, and the inclusion of CRDTs in the conclusion shows a sophisticated understanding of modern distributed systems beyond the basic binary trade-off.",
+        "topicScores": {
+          "CAP Theorem": 95,
+          "Consensus Protocols": 90,
+          "Distributed Trade-offs": 92,
+          "System Architecture": 90
+        },
+        "strengths": [
+          "Correctly identifies that Partition Tolerance is non-negotiable in physical networks, thereby framing the choice as strictly between Consistency and Availability.",
+          "Accurately distinguishes Raft's leader-based decomposition (Election, Log Replication, Safety) from Paxos's two-phase asynchronous rounds, highlighting the practical preference for Multi-Paxos in production.",
+          "Provides specific technical details for the case studies, such as Cassandra's tunable consistency levels (ONE, QUORUM, ALL) and Spanner's use of GPS/atomic clocks for bounded time uncertainty (epsilon).",
+          "The conclusion effectively moves beyond the binary CAP view by mentioning CRDTs and bounded staleness, demonstrating a nuanced understanding of how modern systems navigate the trade-off continuum."
+        ],
+        "weaknesses": [
+          "The explanation of Paxos could briefly mention the 'liveness' problem in asynchronous systems (i.e., that Paxos guarantees safety but not liveness without additional assumptions), which contrasts with Raft's stronger liveness guarantees under network partitions.",
+          "The analysis of Cassandra could explicitly mention that while it is often labeled 'AP', it can be configured to behave more like 'CP' by setting consistency levels to QUORUM or ALL, which might cause requests to fail during partitions, thus blurring the strict AP label."
+        ],
+        "feedback": "This is an excellent submission that demonstrates a strong command of distributed systems theory. You have correctly identified the core tension of the CAP theorem and provided a clear, logical argument for why Partition Tolerance is a given in real-world scenarios. Your comparison of Paxos and Raft is particularly well-structured; you correctly highlight Raft's design goal of understandability through decomposition and Paxos's theoretical elegance in asynchronous environments. The inclusion of Multi-Paxos as a practical optimization shows you are thinking about real-world implementation details, not just textbook definitions.\n\nYour case studies are also well-chosen and technically accurate. The mention of Spanner's TrueTime API and the epsilon bound is a key detail that many students overlook, and it correctly explains how Spanner achieves strict serializability across a WAN. Similarly, your description of Cassandra's tunable consistency levels is accurate. The conclusion is a strong finish, acknowledging that the CAP theorem is often a simplification and that systems like CRDTs allow for different kinds of consistency guarantees that don't strictly fit the binary C vs. A choice.\n\nTo elevate this to an expert level, consider briefly discussing the liveness implications of Paxos in asynchronous networks versus Raft's stronger liveness guarantees. Additionally, while Cassandra is often cited as an AP system, it is worth noting that its behavior is tunable; if configured with QUORUM consistency, it will sacrifice availability for consistency during partitions, effectively behaving as a CP system in those specific operations. This nuance would further demonstrate your deep understanding of how these theoretical models map to configurable software systems.",
+        "suggestions": [
+          "Explore the 'liveness' vs. 'safety' distinction in consensus algorithms, specifically how Paxos can stall in asynchronous networks while Raft is designed to make progress as long as a majority is available.",
+          "Analyze how tunable consistency levels in systems like Cassandra or DynamoDB allow operators to dynamically shift the system's behavior along the CAP spectrum based on current network conditions or workload priorities.",
+          "Investigate how Conflict-free Replicated Data Types (CRDTs) provide a mathematical framework for achieving eventual consistency without coordination, and compare their performance characteristics to quorum-based systems."
+        ],
+        "maxScore": 100,
+        "evaluatedBy": "Groq LLM (qwen/qwen3.8-27b)",
+        "evaluatedAt": "2026-10-20 20:10",
+        "ragContextUsed": [],
+        "submissionCategory": "theory"
+      }
+    },
+    {
+      "id": "sub-1792526866664",
+      "assignmentId": "a-1792526793523",
+      "classId": "c-1792525524659",
+      "studentId": "u-student-1792525255753",
+      "studentName": "charan",
+      "studentEmail": "charandeepkoushal02@gmail.com",
+      "content": "a=10\nb=5\nc = a + b\nprint(c)\n",
+      "fileName": "solution.py",
+      "filePath": "uploads/1792526864954_solution.py",
+      "submittedAt": "2026-10-20 20:07",
+      "status": "graded",
+      "submissionCategory": "code",
+      "evaluation": {
+        "overallScore": 78,
+        "percentage": 78,
+        "masteryLevel": "beginner",
+        "graceMarksAwarded": 4,
+        "graceMarksReason": "Awarded +4 grace marks for a clean, error-free execution that demonstrates a solid foundational grasp of variable assignment and arithmetic operations. While the scope is minimal, the code is syntactically perfect and runs without issues, which is a great start for a beginner.",
+        "topicScores": {
+          "the final result": 100,
+          "code logic": 70
+        },
+        "strengths": [
+          "Correctly identifies and uses standard variable naming conventions (a, b, c).",
+          "Accurate implementation of the addition operator (+) for integer arithmetic.",
+          "Clean syntax with no logical or runtime errors."
+        ],
+        "weaknesses": [
+          "Lacks modularity; the logic is hardcoded rather than encapsulated in a reusable function.",
+          "No input validation or handling for different data types (e.g., strings or floats).",
+          "Missing documentation or comments to explain the intent of the code."
+        ],
+        "feedback": "You have successfully completed the core requirement of the assignment by correctly adding two variables and displaying the result. The code is concise, syntactically correct, and produces the expected output of 15. This shows that you have a clear understanding of basic Python syntax and variable manipulation, which is an excellent foundation to build upon.\n\nHowever, from a software engineering perspective, the current implementation is quite rigid. In professional development, we value code that is reusable and adaptable. By hardcoding the values of `a` and `b`, the script cannot be easily modified to handle different inputs without changing the source code. Additionally, there is no error handling; if `a` or `b` were accidentally assigned a string, the program would crash. As you progress, I encourage you to think about how to make your code more robust and flexible.\n\nTo improve, consider wrapping your logic in a function that accepts parameters. This will allow you to test your addition logic with various inputs without rewriting the code. Also, adding simple comments to explain what each line does will help you and others understand the flow of your program more easily. Keep up the good work—your foundation is solid!",
+        "suggestions": [
+          "Refactor the code into a function named `add_variables` that takes two arguments and returns their sum.",
+          "Add input validation to ensure that the variables are numeric before performing the addition.",
+          "Include docstrings and inline comments to document the purpose of the code and its variables."
+        ],
+        "maxScore": 100,
+        "evaluatedBy": "Groq LLM (qwen/qwen3.8-27b)",
+        "evaluatedAt": "2026-10-20 20:07",
+        "ragContextUsed": [],
+        "submissionCategory": "code"
+      }
+    },
+    {
+      "id": "sub-1792526258429",
+      "assignmentId": "a-1792526256910",
+      "classId": "c-101",
+      "studentId": "u-student-1",
+      "studentName": "Alice Anderson",
+      "studentEmail": "alice@student.edu",
+      "content": "class BSTNode:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n        self.right = None\n\nclass BinarySearchTree:\n    def __init__(self):\n        self.root = None\n\n    def insert(self, key):\n        if not self.root:\n            self.root = BSTNode(key)\n        else:\n            self._insert_rec(self.root, key)\n\n    def _insert_rec(self, node, key):\n        if key < node.key:\n            if node.left is None:\n                node.left = BSTNode(key)\n            else:\n                self._insert_rec(node.left, key)\n        elif key > node.key:\n            if node.right is None:\n                node.right = BSTNode(key)\n            else:\n                self._insert_rec(node.right, key)\n\n    def search(self, key):\n        curr = self.root\n        while curr:\n            if curr.key == key:\n                return True\n            elif key < curr.key:\n                curr = curr.left\n            else:\n                curr = curr.right\n        return False\n\n    def inorder(self):\n        result = []\n        def traverse(node):\n            if node:\n                traverse(node.left)\n                result.append(node.key)\n                traverse(node.right)\n        traverse(self.root)\n        return result",
+      "fileName": "bst_solution.py",
+      "filePath": "uploads/1792526257142_bst_solution.py",
+      "submittedAt": "2026-10-20 19:57",
+      "status": "graded",
+      "evaluation": {
+        "overallScore": 85,
+        "percentage": 85,
+        "masteryLevel": "intermediate",
+        "topicScores": {
+          "Binary Search Trees": 90,
+          "Tree Traversals": 85,
+          "Time Complexity Analysis": 80
+        },
+        "strengths": [
+          "Correct implementation of the BST property with distinct handling for left and right subtrees during insertion.",
+          "Efficient iterative search implementation that avoids recursion overhead and stack overflow risks.",
+          "Clean separation of concerns between the Node class and the Tree class, adhering to good object-oriented design principles."
+        ],
+        "weaknesses": [
+          "Lack of defensive error handling for invalid input types (e.g., non-comparable objects) which could cause runtime errors.",
+          "No handling for duplicate keys; the current implementation silently ignores duplicates, which may not be the desired behavior for all use cases."
+        ],
+        "feedback": "The student has demonstrated a solid understanding of Binary Search Trees by correctly implementing the core operations: insertion, search, and in-order traversal. The code is clean, readable, and follows standard naming conventions. The iterative approach to the search method is particularly well-chosen, as it optimizes space complexity compared to a recursive implementation. The in-order traversal correctly utilizes a nested helper function to maintain a clean public interface while handling the recursive logic internally. However, the solution lacks robustness in edge cases. Specifically, there is no validation for input types, which could lead to unhandled exceptions if non-comparable data is inserted. Additionally, the handling of duplicate keys is implicit (ignored), which should be explicitly documented or configurable to meet higher standards of defensive programming. The time complexity analysis is implicitly correct (O(h) for search/insert, O(n) for traversal), but explicit documentation or comments explaining the worst-case scenarios (degenerate trees) would elevate the academic rigor of the submission.",
+        "suggestions": [
+          "Implement input validation to ensure keys are comparable and handle non-comparable types gracefully with custom exceptions.",
+          "Add explicit handling for duplicate keys, either by raising an error, ignoring them with a comment, or allowing duplicates with a count attribute.",
+          "Include docstrings for all public methods that explicitly state the time and space complexity, including worst-case scenarios for degenerate trees."
+        ],
+        "evaluatedBy": "Groq LLM (qwen/qwen3.8-27b)",
+        "evaluatedAt": "2026-10-20 19:57",
+        "ragContextUsed": []
+      }
+    },
+    {
+      "id": "sub-1792525174440",
+      "assignmentId": "a-1792525160673",
+      "classId": "c-1792525134760",
+      "studentId": "u-student-1792525066621",
+      "studentName": "Ada Lovelace",
+      "studentEmail": "ada.lovelace@student.edu",
+      "content": "class DFA:\n    def __init__(self, states, alphabet, transitions, start_state, accept_states):\n        self.states = set(states)\n        self.alphabet = set(alphabet)\n        self.transitions = transitions\n        self.start_state = start_state\n        self.accept_states = set(accept_states)\n\n    def process(self, input_string: str) -> bool:\n        current_state = self.start_state\n        for symbol in input_string:\n            if symbol not in self.alphabet:\n                return False\n            key = (current_state, symbol)\n            if key not in self.transitions:\n                return False\n            current_state = self.transitions[key]\n        return current_state in self.accept_states",
+      "fileName": "dfa_simulator.py",
+      "filePath": "uploads/1792525173004_dfa_simulator.py",
+      "submittedAt": "2026-10-20 19:39",
+      "status": "graded",
+      "evaluation": {
+        "overallScore": 95,
+        "percentage": 95,
+        "masteryLevel": "advanced",
+        "topicScores": {
+          "Automata Theory": 95,
+          "Python Classes": 95,
+          "String Parsing": 95
+        },
+        "strengths": [
+          "Correctly implements the standard DFA transition function using a tuple key (state, symbol) for O(1) lookup efficiency.",
+          "Properly validates input symbols against the defined alphabet and handles missing transitions by returning False, adhering to the definition of a total or partial DFA simulation.",
+          "Uses Python sets for states and accept states to ensure O(1) membership testing, demonstrating good data structure selection."
+        ],
+        "weaknesses": [
+          "Lacks input validation in the constructor to ensure the start_state is actually part of the states set and that all transition keys reference valid states/symbols.",
+          "Does not handle the edge case where the input_string is empty (though the logic correctly returns True if start_state is an accept state, explicit handling or documentation would be clearer)."
+        ],
+        "feedback": "The student has provided a clean, efficient, and correct implementation of a Deterministic Finite Automaton. The use of a dictionary with tuple keys for transitions is the standard and most performant approach in Python for this problem. The logic in the `process` method correctly iterates through the input string, updates the current state, and checks for invalid symbols or missing transitions, which is crucial for robustness. The use of sets for `states` and `accept_states` is a strong choice for performance.\n\nTo elevate this to an expert level, the implementation could benefit from stricter validation in the `__init__` method. For instance, ensuring that `start_state` is in `states`, that all keys in `transitions` have states in `states` and symbols in `alphabet`, and that all destination states in the transition values are also in `states`. This would prevent runtime errors or logical inconsistencies if the user provides malformed configuration data. Additionally, adding type hints for the `transitions` dictionary (e.g., `Dict[Tuple[str, str], str]`) would improve code readability and maintainability.",
+        "suggestions": [
+          "Add validation logic in `__init__` to verify that `start_state` is in `states` and that all transition keys/values are consistent with the defined `states` and `alphabet`.",
+          "Include comprehensive unit tests covering edge cases such as empty strings, invalid symbols, and transitions leading to non-accept states.",
+          "Add type hints to the `transitions` parameter and consider using `typing` module for better code documentation and IDE support."
+        ],
+        "evaluatedBy": "Groq LLM (qwen/qwen3.8-27b)",
+        "evaluatedAt": "2026-10-20 19:39"
+      }
+    },
+    {
+      "id": "sub-1792523653161",
+      "assignmentId": "a-101",
+      "classId": "c-101",
+      "studentId": "u-student-1",
+      "studentName": "Alice Anderson",
+      "studentEmail": "alice@student.edu",
+      "content": "def calculate_stats(nums):\n    return sum(nums) / len(nums)",
+      "fileName": "alice_stats.py",
+      "filePath": "uploads/1792523652008_alice_stats.py",
+      "submittedAt": "2026-10-20 19:14",
+      "status": "graded",
+      "evaluation": {
+        "overallScore": 5,
+        "percentage": 5,
+        "masteryLevel": "beginner",
+        "topicScores": {
+          "Variables": 10,
+          "Data Types": 0,
+          "Type Conversion": 0,
+          "String Formatting": 0
+        },
+        "strengths": [
+          "The function correctly calculates the arithmetic mean using sum and len.",
+          "The code is syntactically valid Python.",
+          "The function signature is clean and easy to read."
+        ],
+        "weaknesses": [
+          "The submission completely fails to demonstrate int, float, or complex data types as required.",
+          "There is no implementation of type conversion or edge-case handling (e.g., handling empty lists or non-numeric inputs).",
+          "The script lacks any string formatting, specifically the required modern f-string float specifiers."
+        ],
+        "feedback": "Your submission is significantly incomplete relative to the assignment instructions. The prompt explicitly required a script demonstrating specific data types (int, float, complex), type conversion with edge-case handling, and modern f-string formatting. Your current code only provides a basic function to calculate the mean of a list, which does not address any of the core learning objectives for this module. \n\nTo meet the requirements, you need to expand your script to include variables of different types, explicitly show how to convert between them (and handle errors like converting a string to an int), and print the results using f-strings with specific float precision (e.g., `:.2f`). Please review the lecture materials on data types and string formatting to understand these concepts before resubmitting.",
+        "suggestions": [
+          "Add variables for int, float, and complex numbers and print their types using the `type()` function.",
+          "Implement a try-except block to demonstrate safe type conversion, such as converting a user input string to a float.",
+          "Use f-strings to format the calculated statistics, ensuring you use float specifiers like `:.2f` or `:.4f` for precision."
+        ],
+        "evaluatedBy": "Groq LLM (qwen/qwen3.8-27b)",
+        "evaluatedAt": "2026-10-20 19:14"
+      }
+    },
+    {
+      "id": "sub-2",
+      "assignmentId": "a-101",
+      "classId": "c-101",
+      "studentId": "u-student-2",
+      "studentName": "Bob Brown",
+      "studentEmail": "bob@student.edu",
+      "content": "x = 10\ny = '20'\nz = x + int(y)\nprint('Sum: ' + str(z))",
+      "fileName": "bob_basics.py",
+      "filePath": "uploads/bob_basics.py",
+      "submittedAt": "2026-10-19 11:20",
+      "status": "graded",
+      "evaluation": {
+        "overallScore": 58,
+        "maxScore": 100,
+        "percentage": 58,
+        "masteryLevel": "intermediate",
+        "topicScores": {
+          "Variables": 65,
+          "Data Types": 55,
+          "Type Conversion": 62,
+          "String Formatting": 45
+        },
+        "strengths": [
+          "Correct type conversion of string to integer"
+        ],
+        "weaknesses": [
+          "Missing float and complex demonstrations",
+          "Uses string concatenation instead of modern f-strings"
+        ],
+        "feedback": "Good initial effort Bob. Review the lecture on f-strings and type hinting to improve your score.",
+        "suggestions": [
+          "Practice float formatting with f'{val:.2f}'",
+          "Include multiple data types in your test runs"
+        ],
+        "evaluatedBy": "Groq LLM (qwen/qwen3.8-27b)",
+        "evaluatedAt": "2026-10-19 11:22"
+      }
+    }
+  ],
+  "materials": [
+    {
+      "id": "mat-1792528975704",
+      "classId": "c-101",
+      "type": "notes",
+      "title": "Concurrency & Mutex Locks in Python",
+      "topic": "Unit 3: Concurrency",
+      "description": "Comprehensive lecture notes on threading, GIL, and mutex synchronization locks.",
+      "content": "# Concurrency in Python\n\n## The Global Interpreter Lock (GIL)\nPython uses a GIL to ensure thread safety...",
+      "fileName": "concurrency_notes.md",
+      "createdAt": "2026-10-20 20:42",
+      "authorId": "u-faculty-1",
+      "authorName": "Dr. Sarah Smith"
+    },
+    {
+      "id": "mat-101-syl",
+      "classId": "c-101",
+      "type": "syllabus",
+      "title": "Official Course Syllabus: Python & Computational Thinking",
+      "topic": "Course Overview",
+      "description": "Accredited syllabus detailing lecture milestones, learning objectives, academic integrity, and sensible grading policies.",
+      "content": "# CS101: Introduction to Python Programming & Computational Thinking\n\n## 1. Course Information\n- **Instructor:** Dr. Sarah Smith (sarah.smith@university.edu)\n- **Office Hours:** Tuesdays & Thursdays, 2:00 PM – 4:00 PM\n- **Location:** Hall 302 / Online Portal\n\n## 2. Course Objectives & Learning Outcomes\nBy the end of this course, students will be able to:\n1. Model complex computational problems using fundamental Python 3 primitives and data structures.\n2. Design memory-efficient functions and modular architectures adhering to PEP 8 standards.\n3. Analyze asymptotic time and space complexity of elementary algorithms.\n4. Apply defensive programming techniques with robust exception handling.\n\n## 3. Syllabus Unit Roadmap\n- **Unit 1: Memory & Data Types:** Primitives, IEEE 754 Floating-Point precision, Mutability vs Immutability, String interning.\n- **Unit 2: Functional Abstraction & Recursion:** Call-by-object-reference, First-class functions, Decorators, and Memoization.\n- **Unit 3: Compound Data Structures:** Dictionaries (open-addressing hash maps), Sets, Lists, and Tuples.\n- **Unit 4: Object-Oriented Modeling:** Classes, Encapsulation, Dunder methods (`__repr__`, `__eq__`), and Inheritance.\n\n## 4. Evaluation Criteria & Grace Marks Policy\n- Coursework Assignments & Labs: 50%\n- Theoretical & Analytical Essays: 25%\n- Final Capstone Examination: 25%\n\n*Pedagogical Policy:* In alignment with teacher-grade assessment principles, good-faith submissions that exhibit strong conceptual depth, clear reasoning, and genuine effort are awarded between +2 and +6 teacher grace marks.",
+      "fileName": "cs101_official_syllabus.md",
+      "createdAt": "2026-10-15 09:00",
+      "authorId": "u-faculty-1",
+      "authorName": "Dr. Sarah Smith"
+    },
+    {
+      "id": "mat-101-notes-1",
+      "classId": "c-101",
+      "type": "notes",
+      "title": "Lecture Notes: Python Data Model, Memory Layout & Mutability",
+      "topic": "Unit 1: Fundamentals",
+      "description": "Essential lecture notes covering Python's object model, reference counting, mutability rules, and shallow vs deep copies.",
+      "content": "# Lecture Notes: Python Data Model & Object Representation\n\n## 1. The 'Everything is an Object' Paradigm\nIn Python, every entity is an instance of `PyObject`, containing at least:\n1. An integer reference counter (`ob_refcnt`)\n2. A pointer to its type object (`ob_type`)\n\n## 2. Mutability Table\n| Type | Mutable? | Storage Characteristics |\n| :--- | :--- | :--- |\n| `int`, `float`, `complex` | No | Arbitrary precision (int) or IEEE 754 double (float) |\n| `str`, `bytes` | No | Contiguous UTF-8 unicode buffer |\n| `tuple`, `frozenset` | No | Immutable pointer arrays |\n| `list` | Yes | Over-allocated dynamic pointer array |\n| `dict`, `set` | Yes | Compact hash table with hash collision probing |\n\n## 3. Variable Assignment vs Object Mutation\n- Assignment (`a = b`) binds a new name to the existing object reference; it does not clone data.\n- In-place mutation (`a.append(x)`) alters the shared heap object in-place.\n- Reassignment (`a = a + [x]`) constructs a brand-new object in memory.",
+      "fileName": "lecture_01_memory_notes.md",
+      "createdAt": "2026-10-17 11:30",
+      "authorId": "u-faculty-1",
+      "authorName": "Dr. Sarah Smith"
+    },
+    {
+      "id": "mat-201-syl",
+      "classId": "c-201",
+      "type": "syllabus",
+      "title": "CS201 Syllabus: Data Structures & Algorithmic Complexity",
+      "topic": "Course Overview",
+      "description": "Official course syllabus covering linear and hierarchical data structures, amortized complexity, and balance invariants.",
+      "content": "# CS201: Data Structures and Algorithms\n## Instructor: Dr. Sarah Smith\n\n### Core Course Modules:\n1. Linear Structures: Dynamic Arrays, Amortized Doubly Linked Lists, Queues, Stacks.\n2. Trees and Hierarchies: Binary Search Trees, AVL Trees, Red-Black Trees, Priority Queues (Heaps).\n3. Graph Algorithms: Breadth-First Search, Depth-First Search, Dijkstra, Prim, Kruskal.\n4. Algorithm Design Techniques: Divide & Conquer, Dynamic Programming, Greedy Approximations.",
+      "fileName": "cs201_syllabus.md",
+      "createdAt": "2026-10-15 09:15",
+      "authorId": "u-faculty-1",
+      "authorName": "Dr. Sarah Smith"
+    },
+    {
+      "id": "mat-301-syl",
+      "classId": "c-301",
+      "type": "syllabus",
+      "title": "CS301 Syllabus: Machine Learning & Mathematical Optimization",
+      "topic": "Course Overview",
+      "description": "Overview of supervised/unsupervised learning, convex loss surfaces, gradient descent, and neural representations.",
+      "content": "# CS301: Machine Learning & Neural Representations\n## Instructor: Prof. Michael Johnson\n\n### Key Topics:\n- Multivariate Linear & Logistic Regression\n- Vectorized Gradient Descent with Learning Rate Schedules\n- Regularization (L1 Lasso, L2 Ridge) and Generalization Bounds\n- Neural Networks, Backpropagation, and Deep Optimization",
+      "fileName": "cs301_syllabus.md",
+      "createdAt": "2026-10-15 10:00",
+      "authorId": "u-faculty-2",
+      "authorName": "Prof. Michael Johnson"
+    },
+    {
+      "id": "mat-201-notes-1",
+      "classId": "c-201",
+      "type": "notes",
+      "title": "Lecture Notes: Linked Lists, Pointers & Linear Traversal",
+      "topic": "Unit 2: Linear Data Structures",
+      "description": "Uploaded lecture notes on Singly & Doubly Linked Lists, head/tail pointer invariants, sentinel dummy nodes, and linear reversal algorithms.",
+      "content": "# CS201 Lecture Notes: Linked Lists & Pointer Manipulation\n\n## 1. Linked List Structure vs Dynamic Arrays\n- Unlike contiguous arrays, linked list elements (nodes) are allocated disjointly in heap memory and linked via pointer references (next and prev).\n- Insertion/Deletion at known position: O(1) pointer updates without element shifting.\n- Element Access by index: O(n) linear scan required.\n\n## 2. Singly vs Doubly Linked Lists\n- Singly Linked List: Each node contains data and next pointer.\n- Doubly Linked List: Each node maintains both prev and next, enabling bidirectional traversal and O(1) removal of an arbitrary node given its direct pointer.\n\n## 3. Boundary Edge Cases & Sentinel Nodes\n- Common pitfalls: Dereferencing None when operating on head/tail or empty lists.\n- Sentinel (dummy head/tail) nodes eliminate special branching for empty lists and single-element bounds.\n\n## 4. Key Algorithms Covered To Date\n1. In-place iterative reversal of a linked list (three-pointer technique: prev, curr, next).\n2. Cycle detection using Floyd Tortoise and Hare (two-pointer slow/fast technique).\n3. Merging two sorted linked lists in O(n) time and O(1) auxiliary space.",
+      "fileName": "lecture_02_linked_lists.md",
+      "createdAt": "2026-10-18 14:00",
+      "authorId": "u-faculty-1",
+      "authorName": "Dr. Sarah Smith"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "q-1792530305681",
+      "classId": "c-101",
+      "title": "Test Quiz: Python Data Model",
+      "topic": "Unit 1: Fundamentals",
+      "instructions": "Answer the 2 questions to check your knowledge.",
+      "timeLimitMinutes": 5,
+      "points": 100,
+      "questions": [
+        {
+          "id": "q1",
+          "question": "Is a tuple mutable or immutable?",
+          "options": [
+            "Mutable",
+            "Immutable",
+            "Semi-mutable",
+            "Depends on Python version"
+          ],
+          "correctOption": 1,
+          "explanation": "Tuples cannot be modified after instantiation."
+        },
+        {
+          "id": "q2",
+          "question": "What does id(x) return in CPython?",
+          "options": [
+            "The object type code",
+            "The memory address of the object",
+            "The reference count",
+            "The hash code"
+          ],
+          "correctOption": 1,
+          "explanation": "In CPython, id() returns the memory address of the object on the heap."
+        }
+      ],
+      "authorId": "u-faculty-1",
+      "authorName": "Dr. Sarah Smith",
+      "createdAt": "2026-10-20 21:05"
+    },
+    {
+      "id": "q-101-1",
+      "classId": "c-101",
+      "title": "Pop Quiz: Python Memory Model & Mutability",
+      "topic": "Unit 1: Fundamentals",
+      "instructions": "Answer the following 4 conceptual questions on Python memory allocation, mutability rules, and reference assignment.",
+      "timeLimitMinutes": 10,
+      "points": 100,
+      "questions": [
+        {
+          "id": "q1",
+          "question": "What will the following code output?\n\na = [1, 2]\nb = a\nb.append(3)\nprint(a)",
+          "options": [
+            "[1, 2]",
+            "[1, 2, 3]",
+            "TypeError: immutable reference",
+            "[1, 2, [3]]"
+          ],
+          "correctOption": 1,
+          "explanation": "Lists are mutable objects in Python. The assignment `b = a` copies the reference to the heap object, not the underlying array. Mutating `b` modifies the same object that `a` references."
+        },
+        {
+          "id": "q2",
+          "question": "Which of the following built-in Python data structures is strictly immutable?",
+          "options": [
+            "list",
+            "dict",
+            "tuple",
+            "set"
+          ],
+          "correctOption": 2,
+          "explanation": "Tuples are immutable sequence types. Once allocated, their elements and length cannot be modified or replaced."
+        },
+        {
+          "id": "q3",
+          "question": "What two header fields are present in every CPython `PyObject` base structure?",
+          "options": [
+            "ob_refcnt (reference counter) and ob_type (type object pointer)",
+            "ob_size (array capacity) and ob_hash (cached hash code)",
+            "ob_ptr (memory address) and ob_lock (thread mutex)",
+            "ob_gc (garbage collector flag) and ob_val (primitive value)"
+          ],
+          "correctOption": 0,
+          "explanation": "Every entity in CPython is represented as a `PyObject` containing an integer reference count (`ob_refcnt`) for memory reclamation and a pointer to its type descriptor (`ob_type`)."
+        },
+        {
+          "id": "q4",
+          "question": "Why is using a mutable default argument such as `def append_to(val, target=[])` considered dangerous in Python?",
+          "options": [
+            "It triggers a SyntaxError at compile time.",
+            "The default list is instantiated once at function definition time and retained across all subsequent invocations.",
+            "It allocates new heap memory continuously until an OutOfMemory error occurs.",
+            "CPython garbage collection will prematurely free the argument after the first call."
+          ],
+          "correctOption": 1,
+          "explanation": "Default parameter expressions in Python are evaluated once when the function definition statement is executed. Re-invoking the function without passing an explicit argument re-uses the exact same persistent list instance."
+        }
+      ],
+      "createdAt": "2026-10-18 14:00",
+      "authorId": "u-faculty-1",
+      "authorName": "Dr. Sarah Smith"
+    }
+  ],
+  "quizSubmissions": [
+    {
+      "id": "qsub-1792530305694",
+      "quizId": "q-1792530305681",
+      "assignmentId": "q-1792530305681",
+      "studentId": "u-student-1",
+      "studentName": "Alice Anderson",
+      "studentEmail": "alice@student.edu",
+      "answers": {
+        "q1": 1,
+        "q2": 1
+      },
+      "evaluation": {
+        "overallScore": 100,
+        "maxScore": 100,
+        "percentage": 100,
+        "correctCount": 2,
+        "totalQuestions": 2,
+        "masteryLevel": "expert",
+        "strengths": [
+          "Strong mastery of core concepts tested in this quiz.",
+          "Accurate analytical judgment under quiz constraints."
+        ],
+        "weaknesses": [
+          "No weaknesses identified. Perfect score!"
+        ],
+        "feedback": "Outstanding performance! You scored a perfect 100% on \"Test Quiz: Python Data Model\". Your conceptual mastery is exceptional.",
+        "breakdown": [
+          {
+            "questionId": "q1",
+            "question": "Is a tuple mutable or immutable?",
+            "options": [
+              "Mutable",
+              "Immutable",
+              "Semi-mutable",
+              "Depends on Python version"
+            ],
+            "studentChoice": 1,
+            "correctOption": 1,
+            "isCorrect": true,
+            "explanation": "Tuples cannot be modified after instantiation."
+          },
+          {
+            "questionId": "q2",
+            "question": "What does id(x) return in CPython?",
+            "options": [
+              "The object type code",
+              "The memory address of the object",
+              "The reference count",
+              "The hash code"
+            ],
+            "studentChoice": 1,
+            "correctOption": 1,
+            "isCorrect": true,
+            "explanation": "In CPython, id() returns the memory address of the object on the heap."
+          }
+        ],
+        "evaluatedAt": "2026-10-20 21:05"
+      },
+      "submittedAt": "2026-10-20 21:05"
+    }
+  ]
+}

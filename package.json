@@ -1,0 +1,12 @@
+{
+  "name": "ai-academic-assessment-system",
+  "version": "1.0.0",
+  "description": "Agentic AI-Driven Academic Assessment and Performance Analytics System with Next.js",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix frontend run start"
+  },
+  "author": "",
+  "license": "MIT"
+}
