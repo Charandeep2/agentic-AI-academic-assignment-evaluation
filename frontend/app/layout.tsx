@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI-Driven Intelligent Academic Assessment & Analytics System",
+  title: "AI Pathashala — Intelligent Academic Assessment & Analytics System",
   description: "Agentic AI platform with automated rubric evaluation, RAG-grounded feedback, dual Student/Faculty portals, and real-time performance analytics.",
 };
 

@@ -69,7 +69,7 @@ export const ClassroomHeader: React.FC<ClassroomHeaderProps> = ({
               </svg>
             </button>
 
-            {/* Google Classroom Branding */}
+            {/* AI Pathashala Branding */}
             <div
               onClick={onNavigateHome}
               className="flex items-center space-x-2.5 cursor-pointer select-none"
@@ -81,9 +81,9 @@ export const ClassroomHeader: React.FC<ClassroomHeaderProps> = ({
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-gray-800 tracking-tight flex items-center space-x-1.5">
-                  <span>Google Classroom</span>
+                  <span>AI Pathashala</span>
                   <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-200">
-                    AI Pipeline
+                    Agentic AI
                   </span>
                 </span>
                 {activeClass && (
@@ -142,7 +142,7 @@ export const ClassroomHeader: React.FC<ClassroomHeaderProps> = ({
               </button>
             )}
 
-            {/* Google Classroom "+" Create / Join Button */}
+            {/* AI Pathashala "+" Create / Join Button */}
             <div className="relative">
               <button
                 onClick={() => setShowPlusMenu(!showPlusMenu)}
@@ -310,7 +310,7 @@ export const ClassroomHeader: React.FC<ClassroomHeaderProps> = ({
       </div>
 
       {/* ============================================================== */}
-      {/* GOOGLE CLASSROOM LEFT HAMBURGER MENU DRAWER WITH JARVIS OPTION */}
+      {/* AI PATHASHALA LEFT HAMBURGER MENU DRAWER WITH JARVIS OPTION */}
       {/* ============================================================== */}
       {showSideDrawer && (
         <div className="fixed inset-0 z-50 flex">
@@ -331,7 +331,7 @@ export const ClassroomHeader: React.FC<ClassroomHeaderProps> = ({
                   </svg>
                 </div>
                 <span className="font-extrabold text-gray-900 text-base tracking-tight">
-                  Google Classroom
+                  AI Pathashala
                 </span>
               </div>
 
@@ -461,7 +461,7 @@ export const ClassroomHeader: React.FC<ClassroomHeaderProps> = ({
                 <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                 </svg>
-                <span>Sign Out of Classroom</span>
+                <span>Sign Out of AI Pathashala</span>
               </button>
             </div>
           </div>

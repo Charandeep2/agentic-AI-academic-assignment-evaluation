@@ -1,6 +1,6 @@
-# 🎓 Autonomous Agentic AI Google Classroom & Multi-Agent Assessment System
+# 🎓 AI Pathashala — Autonomous Agentic AI Academic Assessment & Analytics System
 
-An advanced academic operating system that pairs a Google Classroom interface with a production-grade **Multi-Agent Evaluation Pipeline**. Powered by **Groq Cloud LLM (`qwen/qwen3.8-27b`)**, **ChromaDB vector retrieval**, and a dual-database persistence engine (**JSON + SQLite ORM**).
+An advanced academic operating system (**AI Pathashala**) that pairs a clean virtual classroom interface with a production-grade **Multi-Agent Evaluation Pipeline**. Powered by **Groq Cloud LLM (`qwen/qwen3.8-27b`)**, **ChromaDB vector retrieval**, and a dual-database persistence engine (**JSON + SQLite ORM**).
 
 Instead of relying on a single prompt, this system implements an autonomous, self-reflecting multi-agent workflow where specialized AI agents collaborate, exchange structured data contracts, and audit their own evaluations before persisting grades.
 
@@ -392,7 +392,7 @@ python server.py
 # Runs on http://localhost:8000 (Swagger docs at http://localhost:8000/docs)
 ```
 
-**Terminal 2 (Next.js Google Classroom Frontend)**:
+**Terminal 2 (Next.js AI Pathashala Frontend)**:
 ```powershell
 cd frontend
 npm run dev

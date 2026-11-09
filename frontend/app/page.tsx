@@ -38,12 +38,13 @@ export default function Home() {
         setAllUsers(users);
 
         // Check saved session in localStorage
-        const savedUserId = localStorage.getItem('google_classroom_user_id');
+        const savedUserId = localStorage.getItem('ai_pathashala_user_id') || localStorage.getItem('google_classroom_user_id');
         if (savedUserId) {
           const found = users.find((u: any) => u.id === savedUserId);
           if (found) {
             setCurrentUser(found);
           } else {
+            localStorage.removeItem('ai_pathashala_user_id');
             localStorage.removeItem('google_classroom_user_id');
             setCurrentUser(null);
           }
@@ -75,6 +76,7 @@ export default function Home() {
 
   const handleLoginSuccess = (user: any) => {
     setCurrentUser(user);
+    localStorage.setItem('ai_pathashala_user_id', user.id);
     localStorage.setItem('google_classroom_user_id', user.id);
     // Refresh users list in background in case a new account registered
     fetch('/api/auth')
@@ -88,11 +90,13 @@ export default function Home() {
   const handleLogout = () => {
     setCurrentUser(null);
     setActiveClass(null);
+    localStorage.removeItem('ai_pathashala_user_id');
     localStorage.removeItem('google_classroom_user_id');
   };
 
   const handleSwitchUser = (user: any) => {
     setCurrentUser(user);
+    localStorage.setItem('ai_pathashala_user_id', user.id);
     localStorage.setItem('google_classroom_user_id', user.id);
   };
 
@@ -334,7 +338,7 @@ export default function Home() {
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="text-center space-y-3">
           <div className="w-12 h-12 border-4 border-emerald-600 border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="text-sm font-semibold text-gray-700">Connecting to Google Classroom Database...</p>
+          <p className="text-sm font-semibold text-gray-700">Connecting to AI Pathashala Database...</p>
         </div>
       </div>
     );
@@ -347,7 +351,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-gray-800 flex flex-col font-sans">
-      {/* Google Classroom Sticky Header */}
+      {/* AI Pathashala Sticky Header */}
       <ClassroomHeader
         currentUser={currentUser}
         activeClass={activeClass}
@@ -374,7 +378,7 @@ export default function Home() {
 
       {/* Main Viewport */}
       <main className="flex-1">
-        {/* If no class selected -> Show Google Classroom Courses Card Grid */}
+        {/* If no class selected -> Show AI Pathashala Courses Card Grid */}
         {!activeClass ? (
           <ClassCardGrid
             classes={classes}
@@ -388,7 +392,7 @@ export default function Home() {
             onJoinClass={handleJoinClass}
           />
         ) : (
-          /* Inside a Class -> 4 Google Classroom Tabs */
+          /* Inside a Class -> 4 AI Pathashala Tabs */
           <div>
             {activeTab === 'stream' && (
               <StreamTab
@@ -446,11 +450,11 @@ export default function Home() {
         )}
       </main>
 
-      {/* Google Classroom Style Footer */}
+      {/* AI Pathashala Style Footer */}
       <footer className="border-t border-gray-200 bg-white py-4 text-center text-xs text-gray-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="flex items-center space-x-2">
-            <span>Google Classroom AI Clone</span>
+            <span className="font-bold text-gray-800">AI Pathashala</span>
             <span>•</span>
             <span className="text-emerald-700 font-semibold">Groq LLM (qwen/qwen3.8-27b)</span>
           </p>

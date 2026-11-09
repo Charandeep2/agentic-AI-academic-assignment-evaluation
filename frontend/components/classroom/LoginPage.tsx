@@ -114,14 +114,14 @@ export const LoginPage: React.FC<LoginPageProps> = ({
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 via-gray-50 to-emerald-50/30 flex flex-col justify-center items-center p-4 py-8">
       <div className="max-w-lg w-full bg-white rounded-3xl shadow-2xl border border-gray-200/80 p-8 space-y-6">
-        {/* Google Classroom Branding */}
+        {/* AI Pathashala Branding */}
         <div className="text-center space-y-2">
           <div className="w-16 h-16 rounded-2xl bg-emerald-600 flex items-center justify-center text-white mx-auto shadow-lg shadow-emerald-600/20">
             <svg className="w-9 h-9" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" />
             </svg>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Google Classroom</h1>
+          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">AI Pathashala</h1>
           <p className="text-xs text-gray-500 font-medium">
             AI-Driven Academic Assessment & Performance Analytics
           </p>
@@ -215,12 +215,12 @@ export const LoginPage: React.FC<LoginPageProps> = ({
               {loading ? (
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
               ) : (
-                <span>Sign In to Classroom</span>
+                <span>Sign In to AI Pathashala</span>
               )}
             </button>
 
             <p className="text-center text-[11px] text-gray-500 pt-1">
-              New to Classroom?{' '}
+              New to AI Pathashala?{' '}
               <button
                 type="button"
                 onClick={() => {
@@ -368,7 +368,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({
               {loading ? (
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
               ) : (
-                <span>Register &amp; Access Classroom</span>
+                <span>Register &amp; Access AI Pathashala</span>
               )}
             </button>
 
