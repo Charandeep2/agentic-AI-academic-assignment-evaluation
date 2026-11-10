@@ -99,6 +99,13 @@ export default function Home() {
 
   useEffect(() => {
     fetchData();
+
+    // Safety timeout: ensure loading state never blocks even under slow or cached network
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const handleLoginSuccess = (user: any) => {
