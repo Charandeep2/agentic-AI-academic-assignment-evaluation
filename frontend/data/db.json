@@ -104,14 +104,83 @@
       "department": "Artificial Intelligence",
       "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Dr.RAMA",
       "createdAt": "2026-10-20T19:44:26.457Z"
+    },
+    {
+      "id": "u-faculty-1794293505453",
+      "username": "rajanna",
+      "password": "rajanna@123",
+      "fullName": "dr.rajanna",
+      "email": "rajanna@gmail.com",
+      "role": "faculty",
+      "department": "Computer Science",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=dr.rajanna",
+      "createdAt": "2026-11-10T06:51:45.453Z"
     }
   ],
   "classes": [
     {
+      "id": "c-1794293545444",
+      "code": "DS222",
+      "name": "llm for financial applications",
+      "section": "Section A \u2022 Fall 2026",
+      "room": "Hall 301",
+      "subject": "Computer Science",
+      "facultyId": "u-faculty-1794293505453",
+      "facultyName": "dr.rajanna",
+      "facultyEmail": "rajanna@gmail.com",
+      "colorTheme": "blue",
+      "classCode": "mn-3nac",
+      "enrolledStudentIds": [
+        "u-student-1"
+      ],
+      "gradingWeights": {
+        "end_term": 40,
+        "mid_term": 30,
+        "quizzes": 15,
+        "labs": 15,
+        "endTerm": 40,
+        "midTerm": 30
+      },
+      "evaluationScheme": [
+        {
+          "id": "end_term",
+          "name": "End-Term Examination",
+          "weight": 40
+        },
+        {
+          "id": "mid_term",
+          "name": "Mid-Term Examination",
+          "weight": 30
+        },
+        {
+          "id": "quizzes",
+          "name": "Quizzes & Tests",
+          "weight": 15
+        },
+        {
+          "id": "labs",
+          "name": "Labs & Practical Coursework",
+          "weight": 15
+        }
+      ],
+      "syllabusProgress": {
+        "currentTopic": "Unit 1: Core Fundamentals",
+        "completedModules": [
+          "Unit 1: Foundations & Architecture"
+        ],
+        "futureModules": [
+          "Unit 2: Intermediate Concepts",
+          "Unit 3: Scalability & Optimization"
+        ],
+        "lastUpdated": "2026-11-10"
+      },
+      "createdAt": "2026-11-10T06:52:25.444Z"
+    },
+    {
       "id": "c-1792525524659",
       "code": "MA001",
       "name": "ENGINEERING MATHEMATICS",
-      "section": "Section A • Fall 2026",
+      "section": "Section A \u2022 Fall 2026",
       "room": "Hall 301",
       "subject": "MATHEMATICS",
       "facultyId": "u-faculty-1792525466457",
@@ -207,7 +276,7 @@
       "id": "c-101",
       "code": "CS101",
       "name": "Introduction to Python Programming",
-      "section": "Section A • Fall 2026",
+      "section": "Section A \u2022 Fall 2026",
       "room": "Hall 302",
       "subject": "Computer Science",
       "facultyId": "u-faculty-1",
@@ -242,7 +311,7 @@
       "id": "c-201",
       "code": "CS201",
       "name": "Data Structures & Algorithms",
-      "section": "Section B • Fall 2026",
+      "section": "Section B \u2022 Fall 2026",
       "room": "Lab 105",
       "subject": "Computer Science",
       "facultyId": "u-faculty-1",
@@ -336,12 +405,24 @@
   ],
   "announcements": [
     {
+      "id": "ann-1794293684653",
+      "classId": "c-1794293545444",
+      "authorId": "u-faculty",
+      "authorName": "Instructor",
+      "authorAvatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Teacher",
+      "content": "\ud83d\udce2 New Theoretical Task Posted: \"report on fraud detection using meta learning and llms\" (100 pts). Due on 2026-11-20.",
+      "type": "assignment",
+      "assignmentId": "a-1794293684653",
+      "createdAt": "2026-11-10 06:54",
+      "comments": []
+    },
+    {
       "id": "ann-1792530340507",
       "classId": "c-101",
       "authorId": "u-faculty",
       "authorName": "Instructor",
       "authorAvatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Teacher",
-      "content": "📢 New Theoretical Task Posted: \"Concurrency & Race Condition Analysis\" (100 pts). Due on 2026-11-28.\n📖 Attached Reference: \"Official CPython Threading & GIL Whitepaper\"",
+      "content": "\ud83d\udce2 New Theoretical Task Posted: \"Concurrency & Race Condition Analysis\" (100 pts). Due on 2026-11-28.\n\ud83d\udcd6 Attached Reference: \"Official CPython Threading & GIL Whitepaper\"",
       "type": "assignment",
       "assignmentId": "a-1792530340507",
       "createdAt": "2026-10-20 21:05",
@@ -353,7 +434,7 @@
       "authorId": "u-faculty-1",
       "authorName": "Dr. Sarah Smith",
       "authorAvatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Teacher",
-      "content": "💡 New Quiz Posted: \"Test Quiz: Python Data Model\" (2 questions • 100 pts). Available for all enrolled students.",
+      "content": "\ud83d\udca1 New Quiz Posted: \"Test Quiz: Python Data Model\" (2 questions \u2022 100 pts). Available for all enrolled students.",
       "type": "quiz",
       "quizId": "q-1792530305681",
       "createdAt": "2026-10-20 21:05",
@@ -365,7 +446,7 @@
       "authorId": "u-faculty-1",
       "authorName": "Dr. Sarah Smith",
       "authorAvatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Teacher",
-      "content": "📚 Posted new NOTES: \"Concurrency & Mutex Locks in Python\". Review the concepts and lecture notes in the Classwork tab.",
+      "content": "\ud83d\udcda Posted new NOTES: \"Concurrency & Mutex Locks in Python\". Review the concepts and lecture notes in the Classwork tab.",
       "createdAt": "2026-10-20 20:42",
       "comments": []
     },
@@ -608,9 +689,254 @@
         "content": "# CPython GIL Whitepaper\n\nThe Global Interpreter Lock prevents multiple native threads from executing Python bytecodes in parallel..."
       },
       "createdAt": "2026-10-20 21:05"
+    },
+    {
+      "id": "a-1794293684653",
+      "classId": "c-1794293545444",
+      "topic": "research papers based",
+      "title": "report on fraud detection using meta learning and llms",
+      "assignmentType": "theory",
+      "submissionFormat": "theory",
+      "instructions": "Provide a detailed theoretical essay answering the prompts:\n1. Explain the fundamental principles and definitions.\n2. Compare and contrast alternative paradigms or architectures with real-world examples.\n3. Discuss constraints, trade-offs, and critical implications.",
+      "starterCode": "# Theoretical Analysis / Essay Response\n\n## 1. Introduction & Core Concept Definitions\n[Explain the fundamental principles here...]\n\n## 2. In-Depth Comparative Analysis\n[Analyze trade-offs, advantages, and limitations...]\n\n## 3. Real-World Case Studies & Practical Applications\n[Provide illustrative industry examples...]\n\n## 4. Conclusion & Synthesis\n[Summarize key takeaways...]",
+      "points": 100,
+      "dueDate": "2026-11-20",
+      "topics": [
+        "Conceptual Accuracy",
+        "Comparative Analysis",
+        "Critical Thinking",
+        "Clarity of Explanation",
+        "modifications to the research paper"
+      ],
+      "rubricCriteria": null,
+      "referenceDoc": null,
+      "evaluationCategory": "End-Term Examination",
+      "evaluationCategoryId": null,
+      "createdAt": "2026-11-10 06:54"
     }
   ],
   "submissions": [
+    {
+      "id": "sub-1794293838037",
+      "assignmentId": "a-1794293684653",
+      "classId": "c-1794293545444",
+      "studentId": "u-student-1",
+      "studentName": "Alice Anderson",
+      "studentEmail": "alice@student.edu",
+      "content": "Aegis X Fraud Detection System \u2014 Comprehensive Project Report.\n\nAbstract:\nThis project implements a multi-agent fraud detection architecture using graph neural networks and transactional behavioral anomaly scoring. The system monitors payment anomalies in real time, computes risk velocity vectors, and triggers automated circuit-breaker protocols to halt fraudulent withdrawals.",
+      "fileName": "Aegis_X_Fraud_Detection_Project_Report.docx",
+      "filePath": "uploads/1794293812322_Aegis_X_Fraud_Detection_Project_Report.docx",
+      "submittedAt": "2026-11-10 06:57",
+      "status": "graded",
+      "submissionCategory": "theory",
+      "evaluationComponentId": "end_term",
+      "evaluationComponentName": "End-Term Examination",
+      "evaluation": {
+        "overallScore": 95,
+        "maxScore": 100,
+        "percentage": 95,
+        "masteryLevel": "advanced",
+        "graceMarksAwarded": 3,
+        "graceMarksReason": "Awarded +3 grace marks for commendable good-faith effort and clear structural presentation.",
+        "topicScores": {
+          "Conceptual Accuracy": 92,
+          "Comparative Analysis": 92,
+          "Critical Thinking": 92,
+          "Clarity of Explanation": 92,
+          "modifications to the research paper": 92
+        },
+        "strengths": [
+          "Clear logical decomposition.",
+          "Good adherence to assignment objectives."
+        ],
+        "weaknesses": [
+          "Could include more defensive validation checks.",
+          "Further elaboration on edge constraints."
+        ],
+        "feedback": "Overall strong work demonstrating positive conceptual understanding of the assigned topics.",
+        "suggestions": [
+          "Deepen exploration of boundary cases.",
+          "Refine algorithmic structure for performance."
+        ],
+        "evaluatedBy": "Agentic AI Pipeline [Agent 2: Evaluator -> Agent 3: Auditor (APPROVED)]",
+        "auditorBadge": "Audited & Verified by Senior Academic AI Auditor: APPROVED \u2713",
+        "auditStatus": "APPROVED",
+        "multiAgentWorkflow": {
+          "agent1_rubric": {
+            "assignmentTitle": "report on fraud detection using meta learning and llms",
+            "totalPoints": 100,
+            "criteria": [
+              {
+                "id": "crit_1",
+                "name": "Conceptual Accuracy",
+                "maxPoints": 20,
+                "rules": "Demonstrates thorough conceptual clarity, problem solving, and correctness in Conceptual Accuracy."
+              },
+              {
+                "id": "crit_2",
+                "name": "Comparative Analysis",
+                "maxPoints": 20,
+                "rules": "Demonstrates thorough conceptual clarity, problem solving, and correctness in Comparative Analysis."
+              },
+              {
+                "id": "crit_3",
+                "name": "Critical Thinking",
+                "maxPoints": 20,
+                "rules": "Demonstrates thorough conceptual clarity, problem solving, and correctness in Critical Thinking."
+              },
+              {
+                "id": "crit_4",
+                "name": "Clarity of Explanation",
+                "maxPoints": 20,
+                "rules": "Demonstrates thorough conceptual clarity, problem solving, and correctness in Clarity of Explanation."
+              },
+              {
+                "id": "crit_5",
+                "name": "modifications to the research paper",
+                "maxPoints": 20,
+                "rules": "Demonstrates thorough conceptual clarity, problem solving, and correctness in modifications to the research paper."
+              }
+            ],
+            "graceMarksPolicy": {
+              "maxGrace": 5,
+              "guideline": "Award +2 to +5 grace marks for sincere good-faith effort and clear structural presentation."
+            }
+          },
+          "agent2_evaluation": {
+            "criteriaEvaluations": [
+              {
+                "criterionId": "crit_1",
+                "name": "Conceptual Accuracy",
+                "maxPoints": 20,
+                "scoreAwarded": 18.4,
+                "justification": "Demonstrated solid competency meeting core expectations for Conceptual Accuracy. Minor edge cases or deeper nuances were omitted."
+              },
+              {
+                "criterionId": "crit_2",
+                "name": "Comparative Analysis",
+                "maxPoints": 20,
+                "scoreAwarded": 18.4,
+                "justification": "Demonstrated solid competency meeting core expectations for Comparative Analysis. Minor edge cases or deeper nuances were omitted."
+              },
+              {
+                "criterionId": "crit_3",
+                "name": "Critical Thinking",
+                "maxPoints": 20,
+                "scoreAwarded": 18.4,
+                "justification": "Demonstrated solid competency meeting core expectations for Critical Thinking. Minor edge cases or deeper nuances were omitted."
+              },
+              {
+                "criterionId": "crit_4",
+                "name": "Clarity of Explanation",
+                "maxPoints": 20,
+                "scoreAwarded": 18.4,
+                "justification": "Demonstrated solid competency meeting core expectations for Clarity of Explanation. Minor edge cases or deeper nuances were omitted."
+              },
+              {
+                "criterionId": "crit_5",
+                "name": "modifications to the research paper",
+                "maxPoints": 20,
+                "scoreAwarded": 18.4,
+                "justification": "Demonstrated solid competency meeting core expectations for modifications to the research paper. Minor edge cases or deeper nuances were omitted."
+              }
+            ],
+            "proposedCriteriaSum": 92,
+            "proposedGraceMarks": 3,
+            "graceMarksReason": "Awarded +3 grace marks for commendable good-faith effort and clear structural presentation.",
+            "proposedTotalScore": 95,
+            "masteryLevel": "advanced",
+            "strengths": [
+              "Clear logical decomposition.",
+              "Good adherence to assignment objectives."
+            ],
+            "weaknesses": [
+              "Could include more defensive validation checks.",
+              "Further elaboration on edge constraints."
+            ],
+            "feedback": "Overall strong work demonstrating positive conceptual understanding of the assigned topics.",
+            "suggestions": [
+              "Deepen exploration of boundary cases.",
+              "Refine algorithmic structure for performance."
+            ],
+            "agent": "Evaluator Agent (Heuristic Fallback)",
+            "model": "Rule-based Evaluator"
+          },
+          "agent3_audit": {
+            "auditStatus": "APPROVED",
+            "reflectionVerdict": "APPROVED",
+            "mathCheck": {
+              "calculatedCriteriaSum": 92,
+              "proposedTotal": 95,
+              "isValid": true,
+              "notes": "Mathematical summation checked and verified strictly."
+            },
+            "rubricCompliance": {
+              "isStrictlyCompliant": true,
+              "unauthorizedDeductionsFound": false,
+              "notes": "Verified all deductions strictly reflect rubric rules."
+            },
+            "auditExplanation": "Senior Academic Auditor verified arithmetic summation and confirmed 100% adherence to rubric guidelines.",
+            "finalOverallScore": 95,
+            "finalPercentage": 95,
+            "finalGraceMarks": 3,
+            "graceMarksReason": "Awarded +3 grace marks for commendable good-faith effort and clear structural presentation.",
+            "auditedCriteria": [
+              {
+                "criterionId": "crit_1",
+                "name": "Conceptual Accuracy",
+                "maxPoints": 20,
+                "scoreAwarded": 18.4,
+                "auditStatus": "VALIDATED",
+                "notes": "Criteria score verified against stated rubric requirements."
+              },
+              {
+                "criterionId": "crit_2",
+                "name": "Comparative Analysis",
+                "maxPoints": 20,
+                "scoreAwarded": 18.4,
+                "auditStatus": "VALIDATED",
+                "notes": "Criteria score verified against stated rubric requirements."
+              },
+              {
+                "criterionId": "crit_3",
+                "name": "Critical Thinking",
+                "maxPoints": 20,
+                "scoreAwarded": 18.4,
+                "auditStatus": "VALIDATED",
+                "notes": "Criteria score verified against stated rubric requirements."
+              },
+              {
+                "criterionId": "crit_4",
+                "name": "Clarity of Explanation",
+                "maxPoints": 20,
+                "scoreAwarded": 18.4,
+                "auditStatus": "VALIDATED",
+                "notes": "Criteria score verified against stated rubric requirements."
+              },
+              {
+                "criterionId": "crit_5",
+                "name": "modifications to the research paper",
+                "maxPoints": 20,
+                "scoreAwarded": 18.4,
+                "auditStatus": "VALIDATED",
+                "notes": "Criteria score verified against stated rubric requirements."
+              }
+            ],
+            "masteryLevel": "advanced",
+            "finalFeedback": "Overall strong work demonstrating positive conceptual understanding of the assigned topics.",
+            "verificationBadge": "Audited & Verified by Senior Academic AI Auditor: APPROVED \u2713",
+            "agent": "Auditor Agent (Algorithmic Math Audit)",
+            "model": "Rule-based Math Validator"
+          }
+        },
+        "ragContextUsed": [
+          "[COURSE SYLLABUS: DS222 Course Syllabus & Policies]: # DS222: llm for financial applications\n\n## 1. Course Information\n- **Instructor:** dr.rajanna\n- **Section:** Section A \u2022 Fall 2026\n- **Class Code:** `mn-3nac`\n\n## 2. Learning Goals\nStudents will explore fundamental paradigms, theoretical models, and hands-on implementations in Computer Science.\n\n## 3. Course Credit & Evaluation Scheme\n- **End-Term Exam:** 40%\n- **Mid-Term Exam:** 30%\n- **Quizzes & Tests:** 15%\n- **Practical Labs & Coursework:** 15%\n\n## 4. Evaluation Philosophy\nSubmissions are e",
+          "[CHROMADB KNOWLEDGE]: Core syllabus grounding guidelines"
+        ],
+        "evaluatedAt": "2026-11-10 06:57",
+        "submissionCategory": "theory"
+      }
+    },
     {
       "id": "sub-1792607056931",
       "assignmentId": "assign-1",
@@ -653,7 +979,7 @@
           "Add comments and documentation to explain your approach and logic."
         ],
         "evaluatedBy": "Agentic AI Pipeline [Agent 2: Evaluator -> Agent 3: Auditor (APPROVED)]",
-        "auditorBadge": "Audited & Verified by Senior Academic AI Auditor: APPROVED ✓",
+        "auditorBadge": "Audited & Verified by Senior Academic AI Auditor: APPROVED \u2713",
         "auditStatus": "APPROVED",
         "multiAgentWorkflow": {
           "agent1_rubric": {
@@ -757,7 +1083,7 @@
             ],
             "masteryLevel": "beginner",
             "finalFeedback": "The submitted solution is insufficient for a coursework assignment as it does not demonstrate any meaningful problem-solving or conceptual understanding. The code provided is a basic loop that doubles positive numbers, which does not align with the expected depth of a 100-point assignment. To improve, you must identify the specific problem statement and implement a solution that addresses the core concepts and implementation quality criteria outlined in the rubric.",
-            "verificationBadge": "Audited & Verified by Senior Academic AI Auditor: APPROVED ✓",
+            "verificationBadge": "Audited & Verified by Senior Academic AI Auditor: APPROVED \u2713",
             "agent": "Auditor Agent (Senior Academic Auditor)",
             "model": "Groq (qwen/qwen3.8-27b)"
           }
@@ -1001,7 +1327,7 @@
           "No input validation or handling for different data types (e.g., strings or floats).",
           "Missing documentation or comments to explain the intent of the code."
         ],
-        "feedback": "You have successfully completed the core requirement of the assignment by correctly adding two variables and displaying the result. The code is concise, syntactically correct, and produces the expected output of 15. This shows that you have a clear understanding of basic Python syntax and variable manipulation, which is an excellent foundation to build upon.\n\nHowever, from a software engineering perspective, the current implementation is quite rigid. In professional development, we value code that is reusable and adaptable. By hardcoding the values of `a` and `b`, the script cannot be easily modified to handle different inputs without changing the source code. Additionally, there is no error handling; if `a` or `b` were accidentally assigned a string, the program would crash. As you progress, I encourage you to think about how to make your code more robust and flexible.\n\nTo improve, consider wrapping your logic in a function that accepts parameters. This will allow you to test your addition logic with various inputs without rewriting the code. Also, adding simple comments to explain what each line does will help you and others understand the flow of your program more easily. Keep up the good work—your foundation is solid!",
+        "feedback": "You have successfully completed the core requirement of the assignment by correctly adding two variables and displaying the result. The code is concise, syntactically correct, and produces the expected output of 15. This shows that you have a clear understanding of basic Python syntax and variable manipulation, which is an excellent foundation to build upon.\n\nHowever, from a software engineering perspective, the current implementation is quite rigid. In professional development, we value code that is reusable and adaptable. By hardcoding the values of `a` and `b`, the script cannot be easily modified to handle different inputs without changing the source code. Additionally, there is no error handling; if `a` or `b` were accidentally assigned a string, the program would crash. As you progress, I encourage you to think about how to make your code more robust and flexible.\n\nTo improve, consider wrapping your logic in a function that accepts parameters. This will allow you to test your addition logic with various inputs without rewriting the code. Also, adding simple comments to explain what each line does will help you and others understand the flow of your program more easily. Keep up the good work\u2014your foundation is solid!",
         "suggestions": [
           "Refactor the code into a function named `add_variables` that takes two arguments and returns their sum.",
           "Add input validation to ensure that the variables are numeric before performing the addition.",
@@ -1179,6 +1505,18 @@
   ],
   "materials": [
     {
+      "id": "mat-1794293545444",
+      "classId": "c-1794293545444",
+      "type": "syllabus",
+      "title": "DS222 Course Syllabus & Policies",
+      "topic": "Course Overview",
+      "description": "Official syllabus outline for llm for financial applications.",
+      "content": "# DS222: llm for financial applications\n\n## 1. Course Information\n- **Instructor:** dr.rajanna\n- **Section:** Section A \u2022 Fall 2026\n- **Class Code:** `mn-3nac`\n\n## 2. Learning Goals\nStudents will explore fundamental paradigms, theoretical models, and hands-on implementations in Computer Science.\n\n## 3. Course Credit & Evaluation Scheme\n- **End-Term Exam:** 40%\n- **Mid-Term Exam:** 30%\n- **Quizzes & Tests:** 15%\n- **Practical Labs & Coursework:** 15%\n\n## 4. Evaluation Philosophy\nSubmissions are evaluated with teacher-aligned pedagogical empathy, rigorous criterion breakdowns, and generous grace marks for sincere good-faith efforts.",
+      "createdAt": "2026-11-10 06:52",
+      "authorId": "u-faculty-1794293505453",
+      "authorName": "dr.rajanna"
+    },
+    {
       "id": "mat-1792528975704",
       "classId": "c-101",
       "type": "notes",
@@ -1198,7 +1536,7 @@
       "title": "Official Course Syllabus: Python & Computational Thinking",
       "topic": "Course Overview",
       "description": "Accredited syllabus detailing lecture milestones, learning objectives, academic integrity, and sensible grading policies.",
-      "content": "# CS101: Introduction to Python Programming & Computational Thinking\n\n## 1. Course Information\n- **Instructor:** Dr. Sarah Smith (sarah.smith@university.edu)\n- **Office Hours:** Tuesdays & Thursdays, 2:00 PM – 4:00 PM\n- **Location:** Hall 302 / Online Portal\n\n## 2. Course Objectives & Learning Outcomes\nBy the end of this course, students will be able to:\n1. Model complex computational problems using fundamental Python 3 primitives and data structures.\n2. Design memory-efficient functions and modular architectures adhering to PEP 8 standards.\n3. Analyze asymptotic time and space complexity of elementary algorithms.\n4. Apply defensive programming techniques with robust exception handling.\n\n## 3. Syllabus Unit Roadmap\n- **Unit 1: Memory & Data Types:** Primitives, IEEE 754 Floating-Point precision, Mutability vs Immutability, String interning.\n- **Unit 2: Functional Abstraction & Recursion:** Call-by-object-reference, First-class functions, Decorators, and Memoization.\n- **Unit 3: Compound Data Structures:** Dictionaries (open-addressing hash maps), Sets, Lists, and Tuples.\n- **Unit 4: Object-Oriented Modeling:** Classes, Encapsulation, Dunder methods (`__repr__`, `__eq__`), and Inheritance.\n\n## 4. Evaluation Criteria & Grace Marks Policy\n- Coursework Assignments & Labs: 50%\n- Theoretical & Analytical Essays: 25%\n- Final Capstone Examination: 25%\n\n*Pedagogical Policy:* In alignment with teacher-grade assessment principles, good-faith submissions that exhibit strong conceptual depth, clear reasoning, and genuine effort are awarded between +2 and +6 teacher grace marks.",
+      "content": "# CS101: Introduction to Python Programming & Computational Thinking\n\n## 1. Course Information\n- **Instructor:** Dr. Sarah Smith (sarah.smith@university.edu)\n- **Office Hours:** Tuesdays & Thursdays, 2:00 PM \u2013 4:00 PM\n- **Location:** Hall 302 / Online Portal\n\n## 2. Course Objectives & Learning Outcomes\nBy the end of this course, students will be able to:\n1. Model complex computational problems using fundamental Python 3 primitives and data structures.\n2. Design memory-efficient functions and modular architectures adhering to PEP 8 standards.\n3. Analyze asymptotic time and space complexity of elementary algorithms.\n4. Apply defensive programming techniques with robust exception handling.\n\n## 3. Syllabus Unit Roadmap\n- **Unit 1: Memory & Data Types:** Primitives, IEEE 754 Floating-Point precision, Mutability vs Immutability, String interning.\n- **Unit 2: Functional Abstraction & Recursion:** Call-by-object-reference, First-class functions, Decorators, and Memoization.\n- **Unit 3: Compound Data Structures:** Dictionaries (open-addressing hash maps), Sets, Lists, and Tuples.\n- **Unit 4: Object-Oriented Modeling:** Classes, Encapsulation, Dunder methods (`__repr__`, `__eq__`), and Inheritance.\n\n## 4. Evaluation Criteria & Grace Marks Policy\n- Coursework Assignments & Labs: 50%\n- Theoretical & Analytical Essays: 25%\n- Final Capstone Examination: 25%\n\n*Pedagogical Policy:* In alignment with teacher-grade assessment principles, good-faith submissions that exhibit strong conceptual depth, clear reasoning, and genuine effort are awarded between +2 and +6 teacher grace marks.",
       "fileName": "cs101_official_syllabus.md",
       "createdAt": "2026-10-15 09:00",
       "authorId": "u-faculty-1",

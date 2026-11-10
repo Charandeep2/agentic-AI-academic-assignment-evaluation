@@ -72,7 +72,17 @@ export function saveUploadedFile(fileName: string, content: string | Buffer): st
   try {
     const safeName = `${Date.now()}_${fileName.replace(/[^a-zA-Z0-9._-]/g, '_')}`;
     const filePath = path.join(UPLOADS_DIR, safeName);
-    fs.writeFileSync(filePath, content);
+    
+    // Check if content is a Base64 Data URL (e.g., data:application/...;base64,...)
+    if (typeof content === 'string' && content.startsWith('data:') && content.includes(';base64,')) {
+      const base64Data = content.split(';base64,')[1];
+      fs.writeFileSync(filePath, Buffer.from(base64Data, 'base64'));
+    } else if (typeof content === 'string' && /^[A-Za-z0-9+/=]{100,}$/.test(content.trim().slice(0, 500))) {
+      // Raw base64 string
+      fs.writeFileSync(filePath, Buffer.from(content.trim(), 'base64'));
+    } else {
+      fs.writeFileSync(filePath, content);
+    }
     return `uploads/${safeName}`;
   } catch (err) {
     console.error('Failed to save file to disk:', err);

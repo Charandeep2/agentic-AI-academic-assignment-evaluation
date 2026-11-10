@@ -418,6 +418,30 @@ export const LoginPage: React.FC<LoginPageProps> = ({
               </button>
             ))}
           </div>
+
+          {/* Multi-Tab Independent Portals Quick Launch */}
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2 text-[11px]">
+            <a
+              href="/?portal=student"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-3.5 py-1.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold border border-emerald-200 transition flex items-center justify-center space-x-1.5"
+              title="Open Student Portal in new browser tab"
+            >
+              <span>🎓 Open Student Portal (New Tab)</span>
+              <span>↗</span>
+            </a>
+            <a
+              href="/?portal=faculty"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-3.5 py-1.5 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-800 font-bold border border-purple-200 transition flex items-center justify-center space-x-1.5"
+              title="Open Faculty Portal in new browser tab"
+            >
+              <span>👨‍🏫 Open Faculty Portal (New Tab)</span>
+              <span>↗</span>
+            </a>
+          </div>
         </div>
 
         <div className="text-center text-[10px] text-gray-400 pt-1 border-t border-gray-100">

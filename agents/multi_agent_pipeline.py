@@ -38,6 +38,21 @@ def extract_text_from_file_data(content_bytes: bytes, filename: str) -> str:
                 return extracted
         except Exception as e:
             print(f"pypdf extraction error: {e}")
+
+    if lower.endswith(".docx"):
+        try:
+            import zipfile
+            import xml.etree.ElementTree as ET
+            with zipfile.ZipFile(io.BytesIO(content_bytes)) as z:
+                xml_content = z.read("word/document.xml")
+                tree = ET.fromstring(xml_content)
+                namespaces = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
+                text_parts = [node.text for node in tree.findall(".//w:t", namespaces) if node.text]
+                extracted = " ".join(text_parts).strip()
+                if extracted:
+                    return extracted
+        except Exception as e:
+            print(f"docx extraction error: {e}")
     
     # Text or fallback
     try:

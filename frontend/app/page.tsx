@@ -9,6 +9,7 @@ import { ClassworkTab } from '@/components/classroom/ClassworkTab';
 import { PeopleTab } from '@/components/classroom/PeopleTab';
 import { GradesTab } from '@/components/classroom/GradesTab';
 import { JarvisChatbot } from '@/components/classroom/JarvisChatbot';
+import { ExternalEvaluatorModal } from '@/components/classroom/ExternalEvaluatorModal';
 
 export default function Home() {
   const [currentUser, setCurrentUser] = useState<any | null>(null);
@@ -23,6 +24,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<'stream' | 'classwork' | 'people' | 'grades'>('stream');
   const [isLoading, setIsLoading] = useState(true);
   const [isJarvisOpen, setIsJarvisOpen] = useState(false);
+  const [isExternalEvaluatorOpen, setIsExternalEvaluatorOpen] = useState(false);
 
   // Load initial data from the database API
   const fetchData = async () => {
@@ -37,19 +39,44 @@ export default function Home() {
         const users = authData.users || [];
         setAllUsers(users);
 
-        // Check saved session in localStorage
-        const savedUserId = localStorage.getItem('ai_pathashala_user_id') || localStorage.getItem('google_classroom_user_id');
-        if (savedUserId) {
-          const found = users.find((u: any) => u.id === savedUserId);
+        // 1. Check URL query param first: ?portal=student or ?portal=faculty
+        let initialUser: any = null;
+        if (typeof window !== 'undefined') {
+          const urlParams = new URLSearchParams(window.location.search);
+          const portalParam = (urlParams.get('portal') || urlParams.get('role') || '').toLowerCase();
+          if (portalParam === 'student') {
+            const studentUser = users.find((u: any) => u.role === 'student');
+            if (studentUser) {
+              initialUser = studentUser;
+              sessionStorage.setItem('ai_pathashala_user_id', studentUser.id);
+            }
+          } else if (portalParam === 'faculty' || portalParam === 'teacher') {
+            const facultyUser = users.find((u: any) => u.role === 'faculty');
+            if (facultyUser) {
+              initialUser = facultyUser;
+              sessionStorage.setItem('ai_pathashala_user_id', facultyUser.id);
+            }
+          }
+        }
+
+        // 2. Check tab-isolated sessionStorage first, fallback to localStorage
+        const sessionUserId = typeof window !== 'undefined' ? sessionStorage.getItem('ai_pathashala_user_id') : null;
+        const localUserId = typeof window !== 'undefined' ? (localStorage.getItem('ai_pathashala_user_id') || localStorage.getItem('google_classroom_user_id')) : null;
+        const targetUserId = initialUser ? initialUser.id : (sessionUserId || localUserId);
+
+        if (initialUser) {
+          setCurrentUser(initialUser);
+        } else if (targetUserId) {
+          const found = users.find((u: any) => u.id === targetUserId);
           if (found) {
             setCurrentUser(found);
+            if (typeof window !== 'undefined') {
+              sessionStorage.setItem('ai_pathashala_user_id', found.id);
+            }
           } else {
-            localStorage.removeItem('ai_pathashala_user_id');
-            localStorage.removeItem('google_classroom_user_id');
             setCurrentUser(null);
           }
         } else {
-          // No active session -> show Login / Register page
           setCurrentUser(null);
         }
       }
@@ -76,8 +103,11 @@ export default function Home() {
 
   const handleLoginSuccess = (user: any) => {
     setCurrentUser(user);
-    localStorage.setItem('ai_pathashala_user_id', user.id);
-    localStorage.setItem('google_classroom_user_id', user.id);
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('ai_pathashala_user_id', user.id);
+      localStorage.setItem('ai_pathashala_user_id', user.id);
+      localStorage.setItem('google_classroom_user_id', user.id);
+    }
     // Refresh users list in background in case a new account registered
     fetch('/api/auth')
       .then(res => res.json())
@@ -90,14 +120,20 @@ export default function Home() {
   const handleLogout = () => {
     setCurrentUser(null);
     setActiveClass(null);
-    localStorage.removeItem('ai_pathashala_user_id');
-    localStorage.removeItem('google_classroom_user_id');
+    if (typeof window !== 'undefined') {
+      sessionStorage.removeItem('ai_pathashala_user_id');
+      localStorage.removeItem('ai_pathashala_user_id');
+      localStorage.removeItem('google_classroom_user_id');
+    }
   };
 
   const handleSwitchUser = (user: any) => {
     setCurrentUser(user);
-    localStorage.setItem('ai_pathashala_user_id', user.id);
-    localStorage.setItem('google_classroom_user_id', user.id);
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('ai_pathashala_user_id', user.id);
+      localStorage.setItem('ai_pathashala_user_id', user.id);
+      localStorage.setItem('google_classroom_user_id', user.id);
+    }
   };
 
   // Create a new Classroom (Faculty)
@@ -363,6 +399,7 @@ export default function Home() {
         }}
         onLogout={handleLogout}
         onOpenJarvis={() => setIsJarvisOpen(true)}
+        onOpenExternalEvaluator={() => setIsExternalEvaluatorOpen(true)}
         classes={classes}
         onSelectClass={(c) => {
           setActiveClass(c);
@@ -427,6 +464,7 @@ export default function Home() {
                 onDeleteMaterial={handleDeleteMaterial}
                 onCreateQuiz={handleCreateQuiz}
                 onSubmitQuiz={handleSubmitQuiz}
+                onOpenExternalEvaluator={() => setIsExternalEvaluatorOpen(true)}
               />
             )}
 
@@ -494,6 +532,13 @@ export default function Home() {
         onClose={() => setIsJarvisOpen(false)}
         currentUser={currentUser}
         activeClass={activeClass}
+      />
+
+      {/* External AI Document Evaluator Modal (Faculty Tool) */}
+      <ExternalEvaluatorModal
+        isOpen={isExternalEvaluatorOpen}
+        onClose={() => setIsExternalEvaluatorOpen(false)}
+        currentUser={currentUser}
       />
     </div>
   );

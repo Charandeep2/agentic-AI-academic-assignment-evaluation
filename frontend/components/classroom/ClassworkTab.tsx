@@ -18,6 +18,7 @@ interface ClassworkTabProps {
   onDeleteMaterial?: (id: string) => Promise<any>;
   onCreateQuiz?: (data: any) => Promise<any>;
   onSubmitQuiz?: (data: any) => Promise<any>;
+  onOpenExternalEvaluator?: () => void;
 }
 
 export const ClassworkTab: React.FC<ClassworkTabProps> = ({
@@ -34,6 +35,7 @@ export const ClassworkTab: React.FC<ClassworkTabProps> = ({
   onDeleteMaterial,
   onCreateQuiz,
   onSubmitQuiz,
+  onOpenExternalEvaluator,
 }) => {
   const isFaculty = currentUser.role === 'faculty';
 
@@ -62,6 +64,9 @@ export const ClassworkTab: React.FC<ClassworkTabProps> = ({
   // Student submission form state
   const [submissionContent, setSubmissionContent] = useState('');
   const [fileName, setFileName] = useState('solution.py');
+  const [submissionFileData, setSubmissionFileData] = useState<string | null>(null);
+  const [showFacultyDocPreview, setShowFacultyDocPreview] = useState(false);
+  const [showStudentDocPreview, setShowStudentDocPreview] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [evaluatingStep, setEvaluatingStep] = useState<string>('');
   const [isResubmitting, setIsResubmitting] = useState(false);
@@ -71,6 +76,45 @@ export const ClassworkTab: React.FC<ClassworkTabProps> = ({
   const materialFileInputRef = useRef<HTMLInputElement>(null);
   const refDocFileInputRef = useRef<HTMLInputElement>(null);
   const rubricDocFileInputRef = useRef<HTMLInputElement>(null);
+
+  // Document file detector & opener
+  const isDocFile = (sub: any) => {
+    if (!sub) return false;
+    const name = (sub.fileName || '').toLowerCase();
+    const content = (sub.content || '');
+    return (
+      name.endsWith('.docx') ||
+      name.endsWith('.doc') ||
+      name.endsWith('.pdf') ||
+      name.endsWith('.pptx') ||
+      name.endsWith('.zip') ||
+      content.startsWith('PK\x03\x04') ||
+      content.startsWith('%PDF') ||
+      content.includes('\uFFFD') ||
+      content.startsWith('[DOCUMENT ATTACHMENT:')
+    );
+  };
+
+  const handleOpenDocument = (sub: any) => {
+    if (!sub) return;
+    const path = sub.filePath;
+    const name = sub.fileName || 'submission_document';
+    if (path) {
+      window.open(`/api/files?path=${encodeURIComponent(path)}&name=${encodeURIComponent(name)}`, '_blank');
+      return;
+    }
+    if (sub.fileData) {
+      const a = document.createElement('a');
+      a.href = sub.fileData;
+      a.download = name;
+      a.click();
+      return;
+    }
+    // Fallback: download text or blob
+    const blob = new Blob([sub.content], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    window.open(url, '_blank');
+  };
 
   // Faculty submission review modal state
   const [reviewSubmission, setReviewSubmission] = useState<any | null>(null);
@@ -260,14 +304,29 @@ export const ClassworkTab: React.FC<ClassworkTabProps> = ({
     if (!file) return;
 
     setFileName(file.name);
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const text = event.target?.result;
-      if (typeof text === 'string') {
-        setSubmissionContent(text);
-      }
+
+    // Always read as DataURL to preserve uncorrupted binary data
+    const dataReader = new FileReader();
+    dataReader.onload = (event) => {
+      const dataUrl = event.target?.result as string;
+      setSubmissionFileData(dataUrl);
     };
-    reader.readAsText(file);
+    dataReader.readAsDataURL(file);
+
+    // If text or source code, read as text for instant preview
+    const lower = file.name.toLowerCase();
+    if (lower.endsWith('.txt') || lower.endsWith('.py') || lower.endsWith('.java') || lower.endsWith('.cpp') || lower.endsWith('.md') || lower.endsWith('.json')) {
+      const textReader = new FileReader();
+      textReader.onload = (event) => {
+        const text = event.target?.result;
+        if (typeof text === 'string') {
+          setSubmissionContent(text);
+        }
+      };
+      textReader.readAsText(file);
+    } else {
+      setSubmissionContent(`[DOCUMENT ATTACHMENT: ${file.name}]`);
+    }
   };
 
   // Handle file upload for syllabus/materials
@@ -395,6 +454,7 @@ export const ClassworkTab: React.FC<ClassworkTabProps> = ({
         studentEmail: currentUser.email,
         content: submissionContent,
         fileName: targetFileName,
+        fileData: submissionFileData,
       });
 
       setIsResubmitting(false);
@@ -532,6 +592,18 @@ By rigorously accounting for both mathematical bounds and operational trade-offs
 
           {isFaculty && (
             <div className="flex items-center space-x-2">
+              {onOpenExternalEvaluator && (
+                <button
+                  type="button"
+                  onClick={onOpenExternalEvaluator}
+                  className="flex items-center space-x-1.5 px-3 py-2 bg-purple-50 hover:bg-purple-100 text-purple-800 border border-purple-200 rounded-xl text-xs font-bold transition-all shadow-sm"
+                  title="Evaluate external submissions or documents with AI"
+                >
+                  <span>⚡</span>
+                  <span>External Evaluator</span>
+                </button>
+              )}
+
               <button
                 onClick={() => {
                   setMatType('notes');
@@ -1480,25 +1552,71 @@ By rigorously accounting for both mathematical bounds and operational trade-offs
 
                         {/* Content Inspection */}
                         <div className="pt-2 border-t border-gray-100">
-                          <button
-                            type="button"
-                            onClick={() => setShowSubmittedContent(!showSubmittedContent)}
-                            className="text-xs font-bold text-gray-600 hover:text-emerald-700 flex items-center space-x-1.5 transition"
-                          >
-                            <span>{showSubmittedContent ? '▼ Hide Submitted Content' : '▶ View Submitted Response'}</span>
-                            <span className="text-[10px] text-gray-400 font-normal">
-                              ({studentSubmission.fileName})
-                            </span>
-                          </button>
+                          {isDocFile(studentSubmission) ? (
+                            <div className="p-3.5 rounded-2xl bg-blue-50/70 border border-blue-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mt-2">
+                              <div className="flex items-center space-x-3">
+                                <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-xl shadow-sm flex-shrink-0">
+                                  {studentSubmission.fileName?.toLowerCase().endsWith('.docx') ? '📘' : studentSubmission.fileName?.toLowerCase().endsWith('.pdf') ? '📕' : '📄'}
+                                </div>
+                                <div>
+                                  <div className="flex items-center space-x-2">
+                                    <h5 className="font-bold text-xs text-gray-900 truncate max-w-xs">
+                                      {studentSubmission.fileName}
+                                    </h5>
+                                    <span className="px-2 py-0.5 rounded-full text-[9px] font-black uppercase bg-blue-100 text-blue-800">
+                                      Document Attached
+                                    </span>
+                                  </div>
+                                  <p className="text-[10px] text-gray-500 mt-0.5">
+                                    Submitted coursework document • Verified by Academic Auditor
+                                  </p>
+                                </div>
+                              </div>
 
-                          {showSubmittedContent && (
-                            <div className={`mt-3 p-4 rounded-xl border leading-relaxed text-xs max-h-64 overflow-y-auto ${
-                              studentSubmission.submissionCategory === 'theory'
-                                ? 'bg-gray-50 text-gray-800 whitespace-pre-wrap font-sans border-gray-200'
-                                : 'bg-gray-900 text-gray-100 font-mono border-gray-800'
-                            }`}>
-                              {studentSubmission.content}
+                              <div className="flex items-center space-x-2 self-end sm:self-auto flex-shrink-0">
+                                <button
+                                  type="button"
+                                  onClick={() => handleOpenDocument(studentSubmission)}
+                                  className="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-sm transition flex items-center space-x-1"
+                                >
+                                  <span>📄 Open Document</span>
+                                  <span>↗</span>
+                                </button>
+                                {studentSubmission.filePath && (
+                                  <a
+                                    href={`/api/files?path=${encodeURIComponent(studentSubmission.filePath)}&name=${encodeURIComponent(studentSubmission.fileName)}&download=1`}
+                                    className="p-1.5 bg-white hover:bg-gray-100 text-gray-700 border border-gray-300 rounded-xl text-xs font-bold transition"
+                                    download
+                                    title="Download File"
+                                  >
+                                    ⬇️
+                                  </a>
+                                )}
+                              </div>
                             </div>
+                          ) : (
+                            <>
+                              <button
+                                type="button"
+                                onClick={() => setShowSubmittedContent(!showSubmittedContent)}
+                                className="text-xs font-bold text-gray-600 hover:text-emerald-700 flex items-center space-x-1.5 transition"
+                              >
+                                <span>{showSubmittedContent ? '▼ Hide Submitted Content' : '▶ View Submitted Response'}</span>
+                                <span className="text-[10px] text-gray-400 font-normal">
+                                  ({studentSubmission.fileName})
+                                </span>
+                              </button>
+
+                              {showSubmittedContent && (
+                                <div className={`mt-3 p-4 rounded-xl border leading-relaxed text-xs max-h-64 overflow-y-auto ${
+                                  studentSubmission.submissionCategory === 'theory'
+                                    ? 'bg-gray-50 text-gray-800 whitespace-pre-wrap font-sans border-gray-200'
+                                    : 'bg-gray-900 text-gray-100 font-mono border-gray-800'
+                                }`}>
+                                  {studentSubmission.content}
+                                </div>
+                              )}
+                            </>
                           )}
                         </div>
                       </div>
@@ -2063,24 +2181,89 @@ By rigorously accounting for both mathematical bounds and operational trade-offs
             )}
 
             {/* Content view */}
-            <div className="space-y-1.5">
-              <div className="flex items-center justify-between text-xs font-bold text-gray-700">
-                <span>Submitted Content ({reviewSubmission.fileName}):</span>
-                <button
-                  onClick={() => navigator.clipboard.writeText(reviewSubmission.content)}
-                  className="text-emerald-700 hover:underline text-[11px]"
-                >
-                  Copy Content
-                </button>
+            {isDocFile(reviewSubmission) ? (
+              <div className="p-4 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 shadow-sm space-y-3">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                  <div className="flex items-center space-x-3.5">
+                    <div className="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-2xl shadow-sm flex-shrink-0">
+                      {reviewSubmission.fileName?.toLowerCase().endsWith('.docx') ? '📘' : reviewSubmission.fileName?.toLowerCase().endsWith('.pdf') ? '📕' : '📄'}
+                    </div>
+                    <div>
+                      <div className="flex items-center space-x-2">
+                        <h4 className="font-bold text-sm text-gray-900 truncate max-w-xs sm:max-w-md">
+                          {reviewSubmission.fileName}
+                        </h4>
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-blue-100 text-blue-800 flex-shrink-0">
+                          {reviewSubmission.fileName?.toLowerCase().endsWith('.docx') ? 'Word DOCX' : reviewSubmission.fileName?.toLowerCase().endsWith('.pdf') ? 'PDF Document' : 'Document'}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-gray-500 mt-0.5">
+                        Uploaded coursework document • Audited &amp; verified by Multi-Agent AI
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-2 self-end sm:self-auto flex-shrink-0">
+                    <button
+                      type="button"
+                      onClick={() => handleOpenDocument(reviewSubmission)}
+                      className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-md hover:shadow-lg transition flex items-center space-x-1.5 cursor-pointer"
+                      title="Open or download document"
+                    >
+                      <span>📄 Open Document</span>
+                      <span>↗</span>
+                    </button>
+                    {reviewSubmission.filePath && (
+                      <a
+                        href={`/api/files?path=${encodeURIComponent(reviewSubmission.filePath)}&name=${encodeURIComponent(reviewSubmission.fileName)}&download=1`}
+                        className="px-3 py-2 bg-white hover:bg-gray-100 text-gray-700 border border-gray-300 rounded-xl text-xs font-bold transition flex items-center space-x-1"
+                        download
+                        title="Direct Download"
+                      >
+                        <span>⬇️</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                {/* Collapsible preview of clean extracted text if available */}
+                {!reviewSubmission.content.startsWith('PK\x03\x04') && !reviewSubmission.content.startsWith('%PDF') && !reviewSubmission.content.startsWith('[DOCUMENT ATTACHMENT:') && (
+                  <div className="pt-2 border-t border-blue-200/60">
+                    <button
+                      type="button"
+                      onClick={() => setShowFacultyDocPreview(!showFacultyDocPreview)}
+                      className="text-[11px] font-bold text-blue-700 hover:text-blue-900 flex items-center space-x-1 cursor-pointer"
+                    >
+                      <span>{showFacultyDocPreview ? '▲ Hide Extracted Text' : '▼ View Evaluated Text Summary'}</span>
+                    </button>
+                    {showFacultyDocPreview && (
+                      <div className="mt-2 p-3 bg-white/90 rounded-xl border border-blue-200 text-xs text-gray-800 max-h-40 overflow-y-auto whitespace-pre-wrap font-sans">
+                        {reviewSubmission.content}
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
-              <div className={`p-4 rounded-xl border max-h-52 overflow-y-auto text-xs leading-relaxed ${
-                reviewSubmission.submissionCategory === 'theory'
-                  ? 'bg-gray-50 text-gray-800 whitespace-pre-wrap font-sans border-gray-200'
-                  : 'bg-gray-900 text-gray-100 font-mono border-gray-800'
-              }`}>
-                {reviewSubmission.content}
+            ) : (
+              <div className="space-y-1.5">
+                <div className="flex items-center justify-between text-xs font-bold text-gray-700">
+                  <span>Submitted Content ({reviewSubmission.fileName}):</span>
+                  <button
+                    onClick={() => navigator.clipboard.writeText(reviewSubmission.content)}
+                    className="text-emerald-700 hover:underline text-[11px]"
+                  >
+                    Copy Content
+                  </button>
+                </div>
+                <div className={`p-4 rounded-xl border max-h-52 overflow-y-auto text-xs leading-relaxed ${
+                  reviewSubmission.submissionCategory === 'theory'
+                    ? 'bg-gray-50 text-gray-800 whitespace-pre-wrap font-sans border-gray-200'
+                    : 'bg-gray-900 text-gray-100 font-mono border-gray-800'
+                }`}>
+                  {reviewSubmission.content}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* AUDITOR AGENT VERIFICATION & SELF-REFLECTION BANNER (FACULTY VIEW) */}
             {reviewSubmission.evaluation && (

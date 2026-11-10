@@ -10,6 +10,7 @@ interface ClassroomHeaderProps {
   onNavigateHome: () => void;
   onLogout: () => void;
   onOpenJarvis?: () => void;
+  onOpenExternalEvaluator?: () => void;
   classes?: any[];
   onSelectClass?: (c: any) => void;
   onOpenCreateClass?: () => void;
@@ -24,6 +25,7 @@ export const ClassroomHeader: React.FC<ClassroomHeaderProps> = ({
   onNavigateHome,
   onLogout,
   onOpenJarvis,
+  onOpenExternalEvaluator,
   classes = [],
   onSelectClass,
   onOpenCreateClass,
@@ -127,20 +129,33 @@ export const ClassroomHeader: React.FC<ClassroomHeaderProps> = ({
             </div>
           )}
 
-          {/* Right: JARVIS Action Button / + Plus Action / Role Badge / Profile Avatar */}
-          <div className="flex items-center space-x-2.5">
-            {/* JARVIS AI Shortcut Button in Header */}
-            {onOpenJarvis && (
-              <button
-                type="button"
-                onClick={onOpenJarvis}
-                className="flex items-center space-x-1.5 px-3 py-1.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white rounded-xl text-xs font-bold shadow-sm transition active:scale-95"
-                title="Ask JARVIS AI Assistant"
-              >
-                <span className="text-sm">🤖</span>
-                <span className="hidden sm:inline">JARVIS</span>
-              </button>
-            )}
+            {/* Right: JARVIS Action Button / External Evaluator / + Plus Action / Role Badge / Profile Avatar */}
+            <div className="flex items-center space-x-2 sm:space-x-2.5">
+              {/* JARVIS AI Shortcut Button in Header */}
+              {onOpenJarvis && (
+                <button
+                  type="button"
+                  onClick={onOpenJarvis}
+                  className="flex items-center space-x-1.5 px-3 py-1.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white rounded-xl text-xs font-bold shadow-sm transition active:scale-95"
+                  title="Ask JARVIS AI Assistant"
+                >
+                  <span className="text-sm">🤖</span>
+                  <span className="hidden sm:inline">JARVIS</span>
+                </button>
+              )}
+
+              {/* External Evaluator Shortcut (Faculty View) */}
+              {isFaculty && onOpenExternalEvaluator && (
+                <button
+                  type="button"
+                  onClick={onOpenExternalEvaluator}
+                  className="flex items-center space-x-1.5 px-3 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-xl text-xs font-bold shadow-sm transition active:scale-95"
+                  title="Open External AI Document Evaluator"
+                >
+                  <span className="text-sm">⚡</span>
+                  <span className="hidden md:inline">External Evaluator</span>
+                </button>
+              )}
 
             {/* AI Pathashala "+" Create / Join Button */}
             <div className="relative">
@@ -264,8 +279,41 @@ export const ClassroomHeader: React.FC<ClassroomHeaderProps> = ({
                     </p>
                   </div>
 
+                  {/* Multi-Tab Portals Quick Launch */}
+                  <div className="p-2 border-t border-gray-100 space-y-1">
+                    <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-2">
+                      Multi-Tab Independent Portals
+                    </div>
+                    <a
+                      href="/?portal=student"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full text-left px-2.5 py-1.5 rounded-xl hover:bg-emerald-50 text-emerald-800 font-bold flex items-center justify-between text-xs transition"
+                      title="Open Student Portal in new browser tab"
+                    >
+                      <span className="flex items-center space-x-1.5">
+                        <span>🎓</span>
+                        <span>Open Student Portal</span>
+                      </span>
+                      <span className="text-[10px] bg-emerald-100 px-1.5 py-0.5 rounded">New Tab ↗</span>
+                    </a>
+                    <a
+                      href="/?portal=faculty"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full text-left px-2.5 py-1.5 rounded-xl hover:bg-purple-50 text-purple-800 font-bold flex items-center justify-between text-xs transition"
+                      title="Open Faculty Portal in new browser tab"
+                    >
+                      <span className="flex items-center space-x-1.5">
+                        <span>👨‍🏫</span>
+                        <span>Open Faculty Portal</span>
+                      </span>
+                      <span className="text-[10px] bg-purple-100 px-1.5 py-0.5 rounded">New Tab ↗</span>
+                    </a>
+                  </div>
+
                   {/* Sign Out Button (Only authenticated pathway to switch account) */}
-                  <div className="px-3 pt-1">
+                  <div className="px-3 pt-1 border-t border-gray-100">
                     <button
                       type="button"
                       onClick={() => {
@@ -362,7 +410,7 @@ export const ClassroomHeader: React.FC<ClassroomHeaderProps> = ({
 
             {/* Navigation Options */}
             <div className="flex-1 overflow-y-auto p-3 space-y-1.5">
-              {/* 1. JARVIS CHATBOT OPTION (REQUESTED BY USER) */}
+              {/* 1. JARVIS CHATBOT OPTION */}
               <div className="mb-2">
                 <button
                   type="button"
@@ -386,6 +434,33 @@ export const ClassroomHeader: React.FC<ClassroomHeaderProps> = ({
                   </span>
                 </button>
               </div>
+
+              {/* External Evaluator Option for Faculty */}
+              {isFaculty && onOpenExternalEvaluator && (
+                <div className="mb-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowSideDrawer(false);
+                      onOpenExternalEvaluator();
+                    }}
+                    className="w-full flex items-center justify-between p-3 rounded-2xl bg-gradient-to-r from-purple-600 via-indigo-600 to-emerald-600 text-white font-extrabold text-xs shadow-md hover:shadow-lg transition-all active:scale-[0.98]"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <span className="text-xl">⚡</span>
+                      <div className="text-left">
+                        <span className="block font-bold">External AI Evaluator</span>
+                        <span className="block text-[10px] text-purple-200 font-normal">
+                          Evaluate external candidate documents
+                        </span>
+                      </div>
+                    </div>
+                    <span className="text-[9px] font-bold bg-white/20 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                      Faculty
+                    </span>
+                  </button>
+                </div>
+              )}
 
               {/* 2. Classes Home */}
               <button
@@ -446,6 +521,31 @@ export const ClassroomHeader: React.FC<ClassroomHeaderProps> = ({
                   );
                 })
               )}
+            </div>
+
+            {/* Multi-Tab Portals Launcher in Drawer */}
+            <div className="p-3 border-t border-gray-200 bg-gray-50/50 space-y-1.5">
+              <span className="text-[10px] font-extrabold uppercase tracking-wider text-gray-400 block px-1">
+                Open in Separate Tab
+              </span>
+              <div className="grid grid-cols-2 gap-2 text-[11px]">
+                <a
+                  href="/?portal=student"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold border border-emerald-200 flex items-center justify-center space-x-1 transition text-center"
+                >
+                  <span>🎓 Student ↗</span>
+                </a>
+                <a
+                  href="/?portal=faculty"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-800 font-bold border border-purple-200 flex items-center justify-center space-x-1 transition text-center"
+                >
+                  <span>👨‍🏫 Faculty ↗</span>
+                </a>
+              </div>
             </div>
 
             {/* Drawer Footer: Sign Out */}
